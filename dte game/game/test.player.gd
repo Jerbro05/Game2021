@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export (int) var speed = 1200
-export (int) var jump_speed = -1800
-export (int) var gravity = 4000
+export (int) var speed = 600
+export (int) var jump_speed = -1600
+export (int) var gravity = 5500
 
 var velocity = Vector2.ZERO
 
@@ -29,18 +29,25 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 	
-#		if velocity.x != 0 :
-#			$AnimationPlayer.play("run")
-#			if velocity.x < 0: 
-#				$Sprite.flip_h = true
-#
-#			else: 
-#				$Sprite.flip_h = false
-#		else:
-#			$AnimationPlayer.play("idle") 
-#
-#	else:
-#		if velocity.y < 0:
-#			$AnimationPlayer.play("jump")
-#		if velocity.y > 0:
-#			$AnimationPlayer.play("drop")
+	
+	if velocity.x != 0 :
+		$AnimationPlayer.play("run")
+		if velocity.x < 0: 
+			$Sprite.flip_h = true
+		else: 
+			$Sprite.flip_h = false
+	else:
+		$AnimationPlayer.play("idle") 
+
+	if not is_on_floor():
+		if velocity.y < 0:
+			$AnimationPlayer.play("jump")
+		if velocity.y > 0:
+			$AnimationPlayer.play("drop")
+
+#	if is_on_floor():
+#		if Input.is_action_just_pressed("left_click"):
+#			$AnimationPlayer.play("swipe_1")
+#		if Input.is_action_just_pressed("right_click"):
+#			$AnimationPlayer.play("swipe_2")
+

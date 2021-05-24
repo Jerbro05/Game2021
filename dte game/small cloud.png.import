@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piped.png-28a873813a89f2af2d8a99137ca9d064.stex"
+path="res://.import/small cloud.png-1ffbf0af5a5372fc2923d46fc9dc2f98.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://piped.png"
-dest_files=[ "res://.import/piped.png-28a873813a89f2af2d8a99137ca9d064.stex" ]
+source_file="res://small cloud.png"
+dest_files=[ "res://.import/small cloud.png-1ffbf0af5a5372fc2923d46fc9dc2f98.stex" ]
 
 [params]
 

@@ -3,14 +3,14 @@
 [ext_resource path="res://No bones.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 95.1145, 101.839 )
+extents = Vector2( 110.474, 135.258 )
 
 [node name="ground" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="No bones" type="Sprite" parent="."]
-position = Vector2( 28.0616, -19.6431 )
-scale = Vector2( 0.176846, 0.176846 )
+[node name="No bones2" type="Sprite" parent="."]
+position = Vector2( 31.6056, -19.2759 )
+scale = Vector2( 0.2, 0.25 )
 texture = ExtResource( 1 )

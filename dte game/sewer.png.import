@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cloud medium .png-a07692f230d9dcdc74c863e638125400.stex"
+path="res://.import/sewer.png-4bbfefd52e7ddb5c7450937e2d48580f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cloud medium .png"
-dest_files=[ "res://.import/cloud medium .png-a07692f230d9dcdc74c863e638125400.stex" ]
+source_file="res://sewer.png"
+dest_files=[ "res://.import/sewer.png-4bbfefd52e7ddb5c7450937e2d48580f.stex" ]
 
 [params]
 
