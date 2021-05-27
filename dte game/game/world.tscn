@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game/cloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/test.player.tscn" type="PackedScene" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://game/pipe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://wall.jpg" type="Texture" id=5]
 [ext_resource path="res://game/sewer floor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/castle.tscn" type="PackedScene" id=7]
 
 [node name="world" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -1117.0
 margin_top = 636.0
-margin_right = 1797.0
+margin_right = 1777.0
 margin_bottom = 1523.0
 texture = ExtResource( 5 )
 stretch_mode = 2
@@ -23,7 +24,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -1128.0
 margin_top = -588.0
-margin_right = 1795.0
+margin_right = 1775.0
 margin_bottom = 637.0
 color = Color( 0, 0.670588, 1, 1 )
 __meta__ = {
@@ -62,20 +63,32 @@ position = Vector2( -190.792, 550 )
 [node name="ground6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 786.446, 550 )
 
+[node name="ground7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1227.13, 550 )
+
+[node name="ground8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1446.65, 548.979 )
+
+[node name="ground9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1664.79, 548.979 )
+
 [node name="pipe" parent="." instance=ExtResource( 4 )]
 position = Vector2( 626.792, 493.32 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 635.882, 1373 )
+position = Vector2( 635.704, 1373 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 297.049, 1373 )
 
-[node name="StaticBody2D" parent="StaticBody2D2" instance=ExtResource( 6 )]
-position = Vector2( -338.202, -0.198486 )
+[node name="StaticBody2D4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -41.153, 1373 )
 
-[node name="StaticBody2D2" parent="StaticBody2D2" instance=ExtResource( 6 )]
-position = Vector2( -676.698, -0.198486 )
+[node name="StaticBody2D5" parent="." instance=ExtResource( 6 )]
+position = Vector2( -379.649, 1373 )
 
-[node name="StaticBody2D3" parent="StaticBody2D2" instance=ExtResource( 6 )]
-position = Vector2( 677.416, 0 )
+[node name="StaticBody2D6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 973.343, 1373 )
+
+[node name="castle" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1475.68, 116.936 )

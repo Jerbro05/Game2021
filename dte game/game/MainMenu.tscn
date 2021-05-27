@@ -1,0 +1,135 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://game/font.tres" type="DynamicFont" id=2]
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1492.0
+margin_top = -956.0
+margin_right = -1492.0
+margin_bottom = -956.0
+rect_scale = Vector2( 3.89753, 3.90906 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.607843, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 470.0
+margin_top = 270.0
+margin_right = 554.0
+margin_bottom = 330.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 84.0
+margin_bottom = 12.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_right = 84.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 2 )
+text = "samurai run"
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 16.0
+margin_right = 84.0
+margin_bottom = 60.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+margin_left = 9.0
+margin_right = 74.0
+margin_bottom = 44.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_right = 65.0
+margin_bottom = 12.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
+margin_left = 2.0
+margin_right = 62.0
+margin_bottom = 12.0
+
+[node name="picker" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 7.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 7, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = ">"
+
+[node name="start" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 11.0
+margin_right = 60.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 49, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 16.0
+margin_right = 65.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( -252.8, 16.6188 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
+margin_right = 65.0
+margin_bottom = 12.0
+
+[node name="picker" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_right = 7.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 7, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = ">"
+
+[node name="options" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_left = 11.0
+margin_right = 65.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 49, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 32.0
+margin_right = 65.0
+margin_bottom = 44.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
+margin_left = 2.0
+margin_right = 62.0
+margin_bottom = 12.0
+
+[node name="picker" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
+margin_right = 7.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 7, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = ">"
+
+[node name="quit" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
+margin_left = 11.0
+margin_right = 60.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 49, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
