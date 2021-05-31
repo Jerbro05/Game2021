@@ -6,7 +6,7 @@
 [ext_resource path="res://game/cloud.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/pipe.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/ground.tscn" type="PackedScene" id=6]
-[ext_resource path="res://wall.jpg" type="Texture" id=7]
+[ext_resource path="res://things/wall.jpg" type="Texture" id=7]
 
 [node name="world" type="Node2D"]
 

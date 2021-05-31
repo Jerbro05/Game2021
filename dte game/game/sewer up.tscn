@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://things/Sewer edited (1).png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 313.093, 262.308 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2( 1, 0.75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -134.38, 29.7302 )
+scale = Vector2( 1.05659, 0.965999 )
+shape = SubResource( 1 )
+
+[node name="Sewer edited (1)" type="Sprite" parent="."]
+position = Vector2( 3.35986, 0.808192 )
+scale = Vector2( 0.5, 0.85 )
+texture = ExtResource( 1 )
