@@ -3,8 +3,9 @@
 [ext_resource path="res://game/test.player.gd" type="Script" id=2]
 [ext_resource path="res://player/Attack1.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 14 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.48851
+height = 17.8639
 
 [sub_resource type="Animation" id=2]
 resource_name = "death"
@@ -146,6 +147,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -3.99425, 2.31247 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
