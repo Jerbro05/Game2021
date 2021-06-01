@@ -3,7 +3,7 @@
 [ext_resource path="res://things/Grass block (1).png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 564.117, 589.406 )
+extents = Vector2( 550.984, 589.406 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 scale = Vector2( 0.3, 0.3 )
@@ -13,5 +13,5 @@ position = Vector2( -170.736, 121.838 )
 shape = SubResource( 1 )
 
 [node name="Grass block (1)" type="Sprite" parent="."]
-position = Vector2( -0.071167, -3.0968 )
+position = Vector2( -14.0862, -3.0968 )
 texture = ExtResource( 1 )
