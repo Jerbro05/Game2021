@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://game/cloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/test.player.tscn" type="PackedScene" id=2]
@@ -10,11 +10,12 @@
 [ext_resource path="res://game/ground up.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/sewer up.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/huge cloud.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/enemy.tscn" type="PackedScene" id=11]
 
 [node name="world" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -5219.0
+margin_left = -9440.0
 margin_top = 548.0
 margin_right = 1777.0
 margin_bottom = 1523.0
@@ -25,27 +26,51 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -5218.0
-margin_top = -1559.0
-margin_right = 1775.0
+margin_left = -9423.0
+margin_top = -1878.0
+margin_right = 1778.0
 margin_bottom = 546.0
 color = Color( 0, 0.670588, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 939, 234.348 )
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1066.88, -1085.77 )
 scale = Vector2( 1.5, 1.5 )
 
+[node name="enemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 70.2042, 219.341 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="cloud8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1113.34, -349.421 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="cloud9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1533.24, -577.598 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="cloud10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1029.56, -715.082 )
+scale = Vector2( 2, 1 )
+
+[node name="cloud11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1412.77, -854.892 )
+scale = Vector2( 1.5, 1 )
+
+[node name="cloud12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1044.62, -1015.89 )
+scale = Vector2( 1, 0.8 )
+
 [node name="cloud" parent="." instance=ExtResource( 1 )]
-position = Vector2( 115.594, -121.203 )
+position = Vector2( 697.02, -177.835 )
 
 [node name="cloud2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 408.919, -15.8717 )
+position = Vector2( 895.958, 25.6588 )
 
 [node name="cloud3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -382.527, -277.289 )
+position = Vector2( 247.063, -255.452 )
 scale = Vector2( 2, 1 )
 
 [node name="ground" parent="." instance=ExtResource( 3 )]
@@ -103,7 +128,7 @@ position = Vector2( -190.792, 480.984 )
 position = Vector2( 973.343, 1373 )
 
 [node name="StaticBody2D10" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1354, 1294 )
+position = Vector2( -1354, 1158.24 )
 
 [node name="StaticBody2D7" parent="." instance=ExtResource( 9 )]
 position = Vector2( -717.566, 1293.91 )
@@ -115,5 +140,27 @@ position = Vector2( -379.649, 1373 )
 position = Vector2( 1475.68, 47.92 )
 
 [node name="StaticBody2D9" parent="." instance=ExtResource( 10 )]
-position = Vector2( -2987.64, -444.893 )
-scale = Vector2( 75, 25 )
+position = Vector2( -5270.79, -671.704 )
+scale = Vector2( 125, 45 )
+
+[node name="cloud4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -217.303, -369.432 )
+scale = Vector2( 1.5, 1 )
+
+[node name="cloud5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1285.81, -425.444 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="cloud6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -663.147, -410.797 )
+scale = Vector2( 0.8, 1 )
+
+[node name="cloud7" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1049.79, -316.538 )
+
+[node name="cloud13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1298.33, -1204.67 )
+
+[node name="cloud14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 52.4483, -1329 )
+scale = Vector2( 10, 3 )
