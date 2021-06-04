@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.9722, 26.2414 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "death"
 length = 1.6
 loop = true
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 32 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "hurt"
 length = 2.5
 loop = true
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ 34, 35, 36, 37, 38, 39, 40 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "idle"
 length = 2.0
 loop = true
@@ -57,8 +57,7 @@ tracks/0/keys = {
 "values": [ 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "swing "
+[sub_resource type="Animation" id=5]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -108,20 +107,20 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 13.5713, -9.15041 )
+position = Vector2( 24.4848, -6.47771 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 68
+frame = 56
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.97301, -2.88594 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 3 )
-anims/hurt = SubResource( 4 )
-anims/idle = SubResource( 5 )
-"anims/swing " = SubResource( 2 )
+anims/death = SubResource( 2 )
+anims/hurt = SubResource( 3 )
+anims/idle = SubResource( 4 )
+"anims/swing " = SubResource( 5 )
 anims/walk = SubResource( 6 )

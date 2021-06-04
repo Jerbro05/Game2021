@@ -1,16 +1,18 @@
-extends Node
+extends KinematicBody2D
 
 class_name Enemy
+onready var player = get_tree().get_nodes_in_group("Player")
+var state = "chasing"  
+var speed = 500
 
-var state = "Idle"  
-var speed = 5
-
-
+func _ready():
+	player = player[0]
+	
 func _process(delta):
 	if state == "idle":
 		idle()
 	elif state == "chasing":
-		chasing()
+		chasing(delta)
 	else:
 		patrol()
 
@@ -22,8 +24,6 @@ func idle():
 func patrol():
 	pass
 
-
-
-func chasing():
-	var player_position = get_global_position()
-	move_to(player_position)
+func chasing(delta):
+	var player_position = player.global_position
+	position = position.move_toward(player_position, speed * delta)
