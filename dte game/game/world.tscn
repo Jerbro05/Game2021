@@ -15,8 +15,8 @@
 
 [node name="world" type="Node2D"]
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1783.28, -647.937 )
+[node name="wall" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1782.32, 58.9467 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -9440.0
@@ -168,5 +168,5 @@ position = Vector2( -1049.79, -316.538 )
 position = Vector2( 1298.33, -1204.67 )
 
 [node name="cloud14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 154.157, -1333.24 )
+position = Vector2( 293.342, -1319.77 )
 scale = Vector2( 7, 3 )

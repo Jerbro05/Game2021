@@ -4,7 +4,7 @@
 [ext_resource path="res://game/enemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.9722, 26.2414 )
+extents = Vector2( 14.7661, 25.6023 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "death"
@@ -110,12 +110,13 @@ script = ExtResource( 2 )
 position = Vector2( 24.4848, -6.47771 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
+flip_h = true
 hframes = 8
 vframes = 9
 frame = 56
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.97301, -2.88594 )
+position = Vector2( 29.9902, -1.99504 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
