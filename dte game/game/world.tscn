@@ -11,7 +11,7 @@
 [ext_resource path="res://game/sewer up.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/huge cloud.tscn" type="PackedScene" id=10]
 [ext_resource path="res://game/enemy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://wall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/wall.tscn" type="PackedScene" id=12]
 
 [node name="world" type="Node2D"]
 
@@ -39,14 +39,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="player" parent="." groups=[
-"Player",
-] instance=ExtResource( 2 )]
-position = Vector2( 1066.88, -1085.77 )
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 455.198, 187.447 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="enemy" parent="." instance=ExtResource( 11 )]
-position = Vector2( 70.2042, 219.341 )
+[node name="basic enemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 59.5134, 301.304 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="cloud8" parent="." instance=ExtResource( 1 )]
