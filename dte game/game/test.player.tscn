@@ -4,8 +4,8 @@
 [ext_resource path="res://player/Attack1.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.27788
-height = 17.8639
+radius = 5.38586
+height = 11.7579
 
 [sub_resource type="Animation" id=2]
 resource_name = "death"
@@ -149,7 +149,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.420453, 2.52269 )
+position = Vector2( -4.20447, 6.0965 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 

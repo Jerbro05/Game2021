@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://game/cloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/test.player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://game/huge cloud.tscn" type="PackedScene" id=10]
 [ext_resource path="res://game/enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/wall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://sewer pit.tscn" type="PackedScene" id=13]
+[ext_resource path="res://lil.tscn" type="PackedScene" id=14]
 
 [node name="world" type="Node2D"]
 
@@ -20,9 +22,9 @@ position = Vector2( 1782.32, 58.9467 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -9440.0
-margin_top = 548.0
+margin_top = 546.218
 margin_right = 1777.0
-margin_bottom = 1523.0
+margin_bottom = 1521.22
 texture = ExtResource( 5 )
 stretch_mode = 2
 __meta__ = {
@@ -40,12 +42,15 @@ __meta__ = {
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 455.198, 187.447 )
+position = Vector2( -1178.44, 130.172 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="basic enemy" parent="." instance=ExtResource( 11 )]
 position = Vector2( 59.5134, 301.304 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="lil" parent="." instance=ExtResource( 14 )]
+position = Vector2( -611.806, 219.805 )
 
 [node name="cloud8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1113.34, -349.421 )
@@ -146,6 +151,9 @@ position = Vector2( 1475.68, 47.92 )
 [node name="StaticBody2D9" parent="." instance=ExtResource( 10 )]
 position = Vector2( -5270.79, -671.704 )
 scale = Vector2( 125, 45 )
+
+[node name="StaticBody2D11" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1315.98, 1380.15 )
 
 [node name="cloud4" parent="." instance=ExtResource( 1 )]
 position = Vector2( -217.303, -369.432 )

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Green pit.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 169.556, 114.056 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 41.034, 22.5756 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 41.034, 23.6981 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -5.05112, 13.4696 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -132.451, -121.226 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 124.032, -118.42 )
+shape = SubResource( 3 )
+
+[node name="Green pit" type="Sprite" parent="."]
+position = Vector2( -4.87854, -6.6524 )
+scale = Vector2( 0.5, 0.85 )
+texture = ExtResource( 1 )

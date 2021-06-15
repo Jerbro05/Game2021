@@ -103,7 +103,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 184, 69 )
+extents = Vector2( 205.5, 69 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
@@ -133,5 +133,5 @@ anims/walk = SubResource( 6 )
 position = Vector2( 3, -42.5 )
 shape = SubResource( 7 )
 
-[connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
