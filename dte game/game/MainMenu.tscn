@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://game/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://game/font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://black.jpg" type="Texture" id=3]
+[ext_resource path="res://Attack2.png" type="Texture" id=4]
 
 [node name="MainMenu" type="MarginContainer"]
+anchor_top = -0.08
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1492.0
-margin_top = -956.0
+margin_top = -908.0
 margin_right = -1492.0
 margin_bottom = -956.0
 rect_scale = Vector2( 3.89753, 3.90906 )
@@ -16,10 +19,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Attack2" type="Sprite" parent="."]
+position = Vector2( 503.598, 357.975 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
-color = Color( 0.607843, 0, 0, 1 )
+texture = ExtResource( 3 )
+expand = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 1024.0
@@ -133,3 +142,7 @@ text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Attack3" type="Sprite" parent="."]
+position = Vector2( 570.912, 315.838 )
+texture = ExtResource( 4 )

@@ -1,16 +1,29 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://lil enemy.gd" type="Script" id=1]
-[ext_resource path="res://HolsterWeaponReaper-Sheet.png" type="Texture" id=2]
-[ext_resource path="res://walk.tres" type="Animation" id=3]
+[ext_resource path="res://enemy/HolsterWeaponReaper-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://game/walk.tres" type="Animation" id=2]
+[ext_resource path="res://game/lil enemy.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13, 15.7109 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "pulling out"
+resource_name = "holding"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 29, 29, 29, 29 ]
+}
+
+[sub_resource type="Animation" id=3]
 length = 1.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -24,10 +37,8 @@ tracks/0/keys = {
 "values": [ 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "putting away"
+[sub_resource type="Animation" id=4]
 length = 1.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -41,8 +52,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "run"
+[sub_resource type="Animation" id=5]
 length = 1.4
 loop = true
 tracks/0/type = "value"
@@ -58,8 +68,7 @@ tracks/0/keys = {
 "values": [ 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 63 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "swing"
+[sub_resource type="Animation" id=6]
 length = 1.3
 loop = true
 tracks/0/type = "value"
@@ -75,43 +84,46 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 170.132, 55.8101 )
-
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 262.298, 110.502 )
+extents = Vector2( 152.173, 88.5319 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 218.684, 136.484 )
+
+[node name="ground hard" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 hframes = 8
 vframes = 8
-frame = 47
+frame = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = ExtResource( 3 )
-"anims/pulling out" = SubResource( 2 )
-"anims/putting away" = SubResource( 3 )
-anims/run = SubResource( 4 )
-anims/swing = SubResource( 5 )
+anims/holding = SubResource( 2 )
+anims/idle = ExtResource( 2 )
+"anims/pulling out" = SubResource( 3 )
+"anims/putting away" = SubResource( 4 )
+anims/run = SubResource( 5 )
+anims/swing = SubResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1.55457, -33.4274 )
-shape = SubResource( 6 )
+position = Vector2( -0.227229, -53.0272 )
+shape = SubResource( 7 )
 
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( 1.41583, -33.5075 )
-shape = SubResource( 7 )
+position = Vector2( 2.50677, -49.6886 )
+shape = SubResource( 8 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]

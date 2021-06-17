@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://game/cloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/test.player.tscn" type="PackedScene" id=2]
@@ -12,8 +12,9 @@
 [ext_resource path="res://game/huge cloud.tscn" type="PackedScene" id=10]
 [ext_resource path="res://game/enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/wall.tscn" type="PackedScene" id=12]
-[ext_resource path="res://sewer pit.tscn" type="PackedScene" id=13]
-[ext_resource path="res://lil.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/sewer pit.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/lil.tscn" type="PackedScene" id=14]
+[ext_resource path="res://flying reeper.tscn" type="PackedScene" id=15]
 
 [node name="world" type="Node2D"]
 
@@ -45,12 +46,15 @@ __meta__ = {
 position = Vector2( -1178.44, 130.172 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="basic enemy" parent="." instance=ExtResource( 11 )]
-position = Vector2( 59.5134, 301.304 )
+[node name="ground ez" parent="." instance=ExtResource( 11 )]
+position = Vector2( -764.565, 207.124 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="lil" parent="." instance=ExtResource( 14 )]
-position = Vector2( -611.806, 219.805 )
+[node name="ground hard" parent="." instance=ExtResource( 14 )]
+position = Vector2( 61.8324, 302.516 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 15 )]
+position = Vector2( -714.446, 912.358 )
 
 [node name="cloud8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1113.34, -349.421 )

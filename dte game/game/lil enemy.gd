@@ -1,30 +1,36 @@
 extends KinematicBody2D
 
 export (int) var gravity = 5500
-class_name Enemy
+class_name lil 
 onready var player = get_tree().get_nodes_in_group("Player")
 var state = "idle" 
-var speed = 200
+var speed = 400
 var velocity = Vector2.ZERO
 var target
 
 func _ready():
 	player = player[0]
-	
-	
+
 func _process(delta):
 	if state == "idle":
 		idle()
 	elif state == "chasing":
 		chasing(delta)
-
+	elif state == "pulling out":
+		$AnimationPlayer.play("pulling out")
+		yield($AnimationPlayer,"animation_finished")
+		state = "holding"
+		
+	elif state == "putting away":
+		$AnimationPlayer.play("putting away")
+		yield($AnimationPlayer,"animation_finished")
+		state = "idle"
 
 func idle():
 	$AnimationPlayer.play("idle") 
 
 func chasing(delta):
 	velocity.y += gravity * delta
-
 	var player_position = player.global_position
 	if position.x < player_position.x :
 		pass
@@ -34,19 +40,17 @@ func chasing(delta):
 		velocity.x = -speed * delta
 	
 	if velocity.x != 0 :
-		$AnimationPlayer.play("walk")
+		$AnimationPlayer.play("run")
 		if velocity.x < 0: 
 			$Sprite.flip_h = true
 		else: 
 			$Sprite.flip_h = false
 	else:
 		$AnimationPlayer.play("idle") 
-
+		
 	if target:
 		velocity = move_and_slide(velocity, Vector2.UP)
 		position = position.move_toward(player_position, speed * delta)
-
-
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
@@ -56,9 +60,9 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Player"):
 		target = null
-		state = "idle"
-	
+		state = "putting away"
 
-
-func _on_Area2D_area_shape_exited(area_id, area, area_shape, local_shape):
-	pass # Replace with function body.
+func _on_Area2D2_body_entered(body):
+	if body.is_in_group("Player"):
+		target = body
+		state = "pulling out"
