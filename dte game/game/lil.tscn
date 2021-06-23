@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://enemy/HolsterWeaponReaper-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://game/walk.tres" type="Animation" id=2]
@@ -90,6 +90,9 @@ extents = Vector2( 152.173, 88.5319 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 218.684, 136.484 )
 
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 27.0154, 23.3293 )
+
 [node name="ground hard" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 3 )
@@ -98,7 +101,7 @@ script = ExtResource( 3 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 8
-frame = 30
+frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -111,19 +114,28 @@ anims/idle = ExtResource( 2 )
 anims/run = SubResource( 5 )
 anims/swing = SubResource( 6 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="chasing" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chasing"]
+visible = false
 position = Vector2( -0.227229, -53.0272 )
 shape = SubResource( 7 )
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="seeing" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="seeing"]
+visible = false
 position = Vector2( 2.50677, -49.6886 )
 shape = SubResource( 8 )
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]
+[node name="swipe" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="swipe"]
+position = Vector2( 0.471924, 1.52588e-05 )
+shape = SubResource( 9 )
+
+[connection signal="body_entered" from="chasing" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="chasing" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="seeing" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="seeing" to="." method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="swipe" to="." method="_on_swipe_body_entered"]

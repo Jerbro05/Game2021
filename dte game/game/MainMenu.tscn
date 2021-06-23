@@ -21,7 +21,6 @@ __meta__ = {
 
 [node name="Attack2" type="Sprite" parent="."]
 position = Vector2( 503.598, 357.975 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]

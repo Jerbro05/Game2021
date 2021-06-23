@@ -43,7 +43,7 @@ __meta__ = {
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1178.44, 130.172 )
+position = Vector2( 1034, 220.783 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="ground ez" parent="." instance=ExtResource( 11 )]
@@ -53,8 +53,9 @@ scale = Vector2( 1.5, 1.5 )
 [node name="ground hard" parent="." instance=ExtResource( 14 )]
 position = Vector2( 61.8324, 302.516 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 15 )]
-position = Vector2( -714.446, 912.358 )
+[node name="reaper" parent="." instance=ExtResource( 15 )]
+position = Vector2( -1276.17, 865.488 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="cloud8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1113.34, -349.421 )
