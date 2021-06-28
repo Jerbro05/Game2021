@@ -17,17 +17,23 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "flying",
 "language": "GDScript",
-"path": "res://KinematicBody2D.gd"
+"path": "res://game/KinematicBody2D.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "lil",
 "language": "GDScript",
 "path": "res://game/lil enemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "slime",
+"language": "GDScript",
+"path": "res://game/slime.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
 "flying": "",
-"lil": ""
+"lil": "",
+"slime": ""
 }
 
 [application]

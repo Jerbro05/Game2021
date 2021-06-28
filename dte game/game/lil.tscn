@@ -85,10 +85,10 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 152.173, 88.5319 )
+extents = Vector2( 134.565, 74.626 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 218.684, 136.484 )
+extents = Vector2( 219.19, 78.2668 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 27.0154, 23.3293 )
@@ -117,21 +117,19 @@ anims/swing = SubResource( 6 )
 [node name="chasing" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chasing"]
-visible = false
-position = Vector2( -0.227229, -53.0272 )
+position = Vector2( 3.8931, -58.4586 )
 shape = SubResource( 7 )
 
 [node name="seeing" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="seeing"]
-visible = false
-position = Vector2( 2.50677, -49.6886 )
+position = Vector2( -10.408, -62.2673 )
 shape = SubResource( 8 )
 
 [node name="swipe" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swipe"]
-position = Vector2( 0.471924, 1.52588e-05 )
+position = Vector2( 0.471924, -7.11694 )
 shape = SubResource( 9 )
 
 [connection signal="body_entered" from="chasing" to="." method="_on_Area2D_body_entered"]

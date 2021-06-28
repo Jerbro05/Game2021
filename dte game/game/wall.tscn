@@ -3,10 +3,10 @@
 [ext_resource path="res://things/walls.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 272.04, 3510.93 )
+extents = Vector2( 349.364, 3510.93 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-scale = Vector2( 0.89, 1 )
+scale = Vector2( 1, 0.5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_top = -3226.0
@@ -19,6 +19,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 244.944, 267 )
+position = Vector2( 301.124, 262 )
 scale = Vector2( 0.878, 1 )
 shape = SubResource( 1 )

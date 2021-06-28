@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://attacking.png" type="Texture" id=2]
+[ext_resource path="res://game/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://things/attacking.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.8914, 31.9539 )
@@ -103,7 +103,6 @@ vframes = 8
 frame = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -116,14 +115,11 @@ anims/swipe = SubResource( 6 )
 [node name="ChaseZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseZone"]
-visible = false
 shape = SubResource( 7 )
 
 [node name="AppearArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AppearArea"]
-visible = false
-position = Vector2( -2.24493, 0 )
 shape = SubResource( 8 )
 
 [node name="playerDamage" type="Area2D" parent="."]

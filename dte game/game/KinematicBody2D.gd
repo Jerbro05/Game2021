@@ -1,12 +1,13 @@
 extends KinematicBody2D
 
 export (int) var gravity = 5500
-class_name Enemy
+class_name flying
 onready var player = get_tree().get_nodes_in_group("Player")
-var state = "idle" 
-var speed = 200
+var state = "fade" 
+var speed = 400
 var velocity = Vector2.ZERO
 var target
+var can_see = false
 var attacking = false
 
 func _ready():
@@ -17,26 +18,26 @@ func _process(delta):
 		idle()
 	elif state == "chasing":
 		chasing(delta)
-	elif state == "attacking":
-		$AnimationPlayer.play("swing")
+	elif state == "life":
+		can_see = true
+		$AnimationPlayer.play("life")
 		yield($AnimationPlayer,"animation_finished")
-		state = "chasing"
+		state = "idle"
 
 func idle():
 	$AnimationPlayer.play("idle") 
-	attacking = false
 
 func chasing(delta):
-	velocity.y += gravity * delta
+	velocity.y += delta
 	var player_position = player.global_position
 	if position.x < player_position.x :
 		velocity.x = speed * delta
 	else:
 		velocity.x = -speed * delta
-
+		
 	if not attacking:
-		if velocity.x != 0 :
-			$AnimationPlayer.play("walk")
+		if velocity.x != 0 : 
+			$AnimationPlayer.play("fade")
 			if velocity.x < 0: 
 				$Sprite.flip_h = true
 			else: 
@@ -50,18 +51,28 @@ func chasing(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
-		attacking = false
 		target = body
 		state = "chasing"
 
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Player"):
-		attacking = false
 		target = null
 		state = "idle"
 
-func _on_swing_body_entered(body):
+func _on_Area2D2_body_entered(body):
+	if can_see:
+		return
+	if body.is_in_group("Player"):
+		target = body
+		state = "life"
+
+func _on_playerDamage_body_entered(body):
 	if body.is_in_group("Player"):
 		attacking = true
+		$AnimationPlayer.play("swipe")
 		body.damage(-35)
-		state = "attacking"
+
+func _on_playerDamage_body_exited(body):
+	if body.is_in_group("Player"):
+		attacking = false
+		$AnimationPlayer.play("fade")

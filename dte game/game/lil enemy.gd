@@ -39,10 +39,8 @@ func chasing(delta):
 	velocity.y += gravity * delta
 	var player_position = player.global_position
 	if position.x < player_position.x :
-		pass
 		velocity.x = speed * delta
 	else:
-		pass
 		velocity.x = -speed * delta
 	
 	if not attacking:
@@ -66,7 +64,6 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Player"):
-		attacking = false
 		target = null
 		state = "putting away"
 
