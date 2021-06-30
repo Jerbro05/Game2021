@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://game/enemy.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "boss",
+"language": "GDScript",
+"path": "res://game/boss.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "flying",
 "language": "GDScript",
 "path": "res://game/KinematicBody2D.gd"
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Enemy": "",
+"boss": "",
 "flying": "",
 "lil": "",
 "slime": ""
