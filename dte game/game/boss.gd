@@ -3,7 +3,7 @@ extends KinematicBody2D
 export (int) var gravity = 5500
 class_name boss
 onready var player = get_tree().get_nodes_in_group("Player")
-var state = "idle" 
+var state = "not awake" 
 var speed = 250
 var velocity = Vector2.ZERO
 var target
@@ -36,6 +36,7 @@ func chasing(delta):
 		velocity.x = -speed * delta
 		
 	if not attacking:
+		print("checking flip",delta)
 		if velocity.x != 0 : 
 			$AnimationPlayer.play("fly")
 			if velocity.x < 0: 
@@ -48,40 +49,7 @@ func chasing(delta):
 	if target:
 		velocity = move_and_slide(velocity, Vector2.UP)
 		position = position.move_toward(player_position, speed * delta)
-#
-#func _on_Area2D_body_exited(body):
-#	if body.is_in_group("Player"):
-#		target = null
-#		state = "idle"
-#
-#func _on_Area2D2_body_entered(body):
-#	if can_see:
-#		return
-#	if body.is_in_group("Player"):
-#		target = body
-#		state = "life"
-#
-#func _on_playerDamage_body_entered(body):
-#	if body.is_in_group("Player"):
-#		attacking = true
-#		$AnimationPlayer.play("swipe")
-#		body.damage(-35)
-#
-#func _on_playerDamage_body_exited(body):
-#	if body.is_in_group("Player"):
-#		attacking = false
-#		$AnimationPlayer.play("fade")
-#
 
-func _on_chasing_area_entered(area):
-	if area.is_in_group("Player"):
-		target = area
-		state = "chasing"
-
-func _on_chasing_area_exited(area):
-	if area.is_in_group("Player"):
-		target = null
-		state = "idle"
 
 func _on_undefence_area_entered(body):
 	if can_see:
@@ -89,9 +57,27 @@ func _on_undefence_area_entered(body):
 	if body.is_in_group("Player"):
 		target = body
 		state = "undefence"
+		attacking = false
 
-func _on_close_attack_area_entered(body):
+func _on_chasing_body_entered(body):
+	if body.is_in_group("Player"):
+		target = body
+		state = "chasing"
+		attacking = false
+
+func _on_chasing_body_exited(body):
+	if body.is_in_group("Player"):
+		target = null
+		state = "idle"
+		attacking = false
+
+func _on_close_attack_body_entered(body):
 	if body.is_in_group("Player"):
 		attacking = true
-		$AnimationPlayer.play("swipe")
+		$AnimationPlayer.play("close")
 		body.damage(-35)
+
+
+func _on_close_attack_body_exited(body):
+	if body.is_in_group("Player"):
+		attacking = false
