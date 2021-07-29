@@ -6,11 +6,16 @@ signal killed()
 export (int) var speed = 600
 export (int) var jump_speed = -1600
 export (int) var gravity = 5500
-
 export (float) var max_health = 100
+export var slash_speed = 1500
+export var fire_rate = 7
 
 onready var health = max_health setget _set_health
 
+var can_fire = true
+var is_dead = false
+var slash_1 = preload("res://slash 1.tscn")
+var slash_2 = preload("res://slash 2.tscn")
 
 var velocity = Vector2.ZERO
 
@@ -37,6 +42,16 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 	
+	if Input.is_action_pressed("right_click") and can_fire:
+		var slash_1_instance = slash_1.instance()
+		slash_1_instance.global_position = get_global_position()
+		get_tree().get_root().add_child(slash_1_instance)
+		
+	if Input.is_action_pressed("left_click") and can_fire:
+		var slash_2_instance = slash_2.instance()
+		get_tree().get_root().add_child(slash_2_instance)
+		slash_2_instance.global_position = get_global_position()
+		
 	
 	if velocity.x != 0 :
 		$AnimationPlayer.play("run")
@@ -53,11 +68,11 @@ func _physics_process(delta):
 		if velocity.y > 0:
 			$AnimationPlayer.play("drop")
 
-#	if is_on_floor():
-#		if Input.is_action_just_pressed("left_click"):
-#			$AnimationPlayer.play("swipe_1")
-#		if Input.is_action_just_pressed("right_click"):
-#			$AnimationPlayer.play("swipe_2")
+	if is_on_floor():
+		if Input.is_action_pressed("left_click"):
+			$AnimationPlayer.play("swipe_1")
+		if Input.is_action_pressed("right_click"):
+			$AnimationPlayer.play("swipe_2")
 
 func damage(amount):
 	_set_health(health - amount)

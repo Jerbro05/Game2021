@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pngwing.com (2).png-b0df01c4509c79407bfc046dbf6be5cc.stex"
+path="res://.import/swipe 1.png-c89ac7bf17050cc95bec79eebcc65cf4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pngwing.com (2).png"
-dest_files=[ "res://.import/pngwing.com (2).png-b0df01c4509c79407bfc046dbf6be5cc.stex" ]
+source_file="res://things/swipe 1.png"
+dest_files=[ "res://.import/swipe 1.png-c89ac7bf17050cc95bec79eebcc65cf4.stex" ]
 
 [params]
 

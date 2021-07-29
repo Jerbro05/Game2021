@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "bird",
 "language": "GDScript",
-"path": "res://bird.gd"
+"path": "res://game/bird.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "boss",

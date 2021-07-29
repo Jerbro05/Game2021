@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arm_projectile_glowing.png-d65d881fce3d9b25f982082b02f2469e.stex"
+path="res://.import/image.png-c0a28313de24db3d17f744d0a476a9a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arm_projectile_glowing.png"
-dest_files=[ "res://.import/arm_projectile_glowing.png-d65d881fce3d9b25f982082b02f2469e.stex" ]
+source_file="res://things/image.png"
+dest_files=[ "res://.import/image.png-c0a28313de24db3d17f744d0a476a9a6.stex" ]
 
 [params]
 
