@@ -4,7 +4,7 @@ export (int) var gravity = 5500
 class_name Enemy
 onready var player = get_tree().get_nodes_in_group("Player")
 var state = "idle" 
-var speed = 200
+var speed = 150
 var velocity = Vector2.ZERO
 var target
 var attacking = false

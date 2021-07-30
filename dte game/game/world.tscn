@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://game/cloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/test.player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://game/ground up.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/sewer up.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/huge cloud.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/wall.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/sewer pit.tscn" type="PackedScene" id=13]
 [ext_resource path="res://game/lil.tscn" type="PackedScene" id=14]
@@ -53,7 +54,7 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( -2278.28, -864.195 )
 
 [node name="ground hard" parent="." instance=ExtResource( 14 )]
-position = Vector2( -762.856, 222.416 )
+position = Vector2( -757.299, 217.09 )
 
 [node name="reaper" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1530.93, 1010.44 )
@@ -64,6 +65,9 @@ position = Vector2( -639.212, 1111.56 )
 
 [node name="bird" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1357.89, -386.569 )
+
+[node name="ground ez" parent="." instance=ExtResource( 11 )]
+position = Vector2( 168.381, 285.845 )
 
 [node name="cloud8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1113.34, -349.421 )

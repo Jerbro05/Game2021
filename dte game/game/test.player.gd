@@ -14,8 +14,8 @@ onready var health = max_health setget _set_health
 
 var can_fire = true
 var is_dead = false
-var slash_1 = preload("res://slash 1.tscn")
-var slash_2 = preload("res://slash 2.tscn")
+var slash_1 = preload("res://slash_1.tscn")
+var slash_2 = preload("res://slash_2.tscn")
 
 var velocity = Vector2.ZERO
 
