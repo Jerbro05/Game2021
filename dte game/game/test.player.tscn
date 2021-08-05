@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://game/test.player.gd" type="Script" id=2]
 [ext_resource path="res://player/Attack1.png" type="Texture" id=3]
@@ -112,7 +112,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=8]
 resource_name = "swipe_1"
 length = 0.75
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -124,6 +123,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("slash_1 damage zone/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, false ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -142,10 +153,105 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 4, 5, 6, 7, 8 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("slash_2 damage zone/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, false ]
+}
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 83.1588, 41.2776 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 92.8291, 49.6866 )
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "drop"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "jump"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "run"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "swipe_1"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "swipe_2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachine" id=35]
+states/drop/node = SubResource( 12 )
+states/drop/position = Vector2( 74, 70 )
+states/idle/node = SubResource( 13 )
+states/idle/position = Vector2( 543, 80 )
+states/jump/node = SubResource( 14 )
+states/jump/position = Vector2( 379, 138 )
+states/run/node = SubResource( 15 )
+states/run/position = Vector2( 570, 197 )
+states/swipe_1/node = SubResource( 16 )
+states/swipe_1/position = Vector2( 1068, 54 )
+states/swipe_2/node = SubResource( 17 )
+states/swipe_2/position = Vector2( 1098, 152 )
+transitions = [ "idle", "run", SubResource( 18 ), "idle", "swipe_1", SubResource( 19 ), "idle", "swipe_2", SubResource( 20 ), "idle", "jump", SubResource( 21 ), "run", "jump", SubResource( 22 ), "swipe_1", "idle", SubResource( 23 ), "swipe_2", "idle", SubResource( 24 ), "jump", "drop", SubResource( 25 ), "drop", "idle", SubResource( 26 ), "run", "idle", SubResource( 27 ), "jump", "idle", SubResource( 28 ), "jump", "run", SubResource( 29 ), "idle", "drop", SubResource( 30 ), "swipe_2", "run", SubResource( 31 ), "swipe_1", "run", SubResource( 32 ), "run", "swipe_2", SubResource( 33 ), "run", "swipe_1", SubResource( 34 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
 [node name="player" type="KinematicBody2D" groups=[
 "Player",
 ]]
+scale = Vector2( 1.25, 1.2 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -168,11 +274,13 @@ texture = ExtResource( 3 )
 flip_h = true
 hframes = 6
 vframes = 6
+frame = 19
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
 [node name="DamageZone" type="Area2D" parent="."]
+visible = false
 collision_layer = 3
 collision_mask = 2
 
@@ -181,4 +289,26 @@ position = Vector2( -1.30905, 1.642 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
+[node name="slash_1 damage zone" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slash_1 damage zone"]
+shape = SubResource( 10 )
+
+[node name="slash_2 damage zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slash_2 damage zone"]
+visible = false
+position = Vector2( 0.840912, -7.14762 )
+shape = SubResource( 11 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 35 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+process_mode = 0
+parameters/playback = SubResource( 36 )
+
 [connection signal="area_entered" from="DamageZone" to="." method="_on_DamageZone_area_entered"]
+[connection signal="body_entered" from="slash_1 damage zone" to="." method="_on_slash_1_damage_zone_body_entered"]
+[connection signal="body_entered" from="slash_2 damage zone" to="." method="_on_slash_2_damage_zone_body_entered"]

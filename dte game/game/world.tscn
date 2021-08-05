@@ -20,25 +20,25 @@
 [ext_resource path="res://game/bird.tscn" type="PackedScene" id=18]
 
 [node name="world" type="Node2D"]
-position = Vector2( -1, 0 )
+position = Vector2( 3470.22, -40.363 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -9440.0
-margin_top = 546.218
-margin_right = 1777.0
-margin_bottom = 1521.22
-texture = ExtResource( 5 )
-stretch_mode = 2
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -13069.0
+margin_top = -1878.0
+margin_right = 1778.0
+margin_bottom = 546.0
+color = Color( 0.235294, 0.654902, 0.815686, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -9423.0
-margin_top = -1878.0
-margin_right = 1778.0
-margin_bottom = 546.0
-color = Color( 0, 0.670588, 1, 1 )
+[node name="sewer walls" type="TextureRect" parent="."]
+margin_left = -13059.0
+margin_top = 546.0
+margin_right = 1777.0
+margin_bottom = 1521.0
+texture = ExtResource( 5 )
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,27 +47,27 @@ __meta__ = {
 position = Vector2( 1779.15, -282.916 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1105.57, 254.72 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( -1381.04, 165.941 )
+scale = Vector2( 1.75, 1.6 )
 
 [node name="boss" parent="." instance=ExtResource( 17 )]
-position = Vector2( -2278.28, -864.195 )
+position = Vector2( -2297.58, -817.079 )
 
 [node name="ground hard" parent="." instance=ExtResource( 14 )]
-position = Vector2( -757.299, 217.09 )
+position = Vector2( -2141.94, 236.011 )
 
 [node name="reaper" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1530.93, 1010.44 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="slime" parent="." instance=ExtResource( 16 )]
-position = Vector2( -639.212, 1111.56 )
+position = Vector2( 15.0639, 1223.6 )
 
 [node name="bird" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1357.89, -386.569 )
+position = Vector2( 525.969, -891.685 )
 
 [node name="ground ez" parent="." instance=ExtResource( 11 )]
-position = Vector2( 168.381, 285.845 )
+position = Vector2( -891.082, 192.612 )
 
 [node name="cloud8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1113.34, -349.421 )
@@ -129,6 +129,24 @@ position = Vector2( -1068.58, 388.932 )
 [node name="ground11" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1289, 388.932 )
 
+[node name="ground12" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1508.35, 388.932 )
+
+[node name="ground13" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1729.05, 388.932 )
+
+[node name="ground14" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1949.74, 388.932 )
+
+[node name="ground15" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2168.6, 388.932 )
+
+[node name="ground16" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2387.31, 388.932 )
+
+[node name="ground17" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2606.06, 388.932 )
+
 [node name="pipe" parent="." instance=ExtResource( 4 )]
 position = Vector2( 626.792, 424.304 )
 
@@ -150,27 +168,30 @@ position = Vector2( -414.2, 393.809 )
 [node name="ground5" parent="." instance=ExtResource( 3 )]
 position = Vector2( -190.792, 480.984 )
 
-[node name="StaticBody2D6" parent="." instance=ExtResource( 6 )]
+[node name="sewer floor 1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1604.09, 1377.54 )
+
+[node name="sewer floor2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 931.435, 1376.54 )
 
-[node name="StaticBody2D10" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1398.03, 1176.61 )
+[node name="sewer floor 3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -421.557, 1376.54 )
 
-[node name="StaticBody2D7" parent="." instance=ExtResource( 9 )]
+[node name="sewer up 1" parent="." instance=ExtResource( 9 )]
 position = Vector2( -759.474, 1297.45 )
 
-[node name="StaticBody2D5" parent="." instance=ExtResource( 6 )]
-position = Vector2( -421.557, 1376.54 )
+[node name="sewer up 2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -1398.03, 1176.61 )
+
+[node name="slime sewer" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1274.07, 1383.69 )
 
 [node name="castle" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1475.68, 47.92 )
 
-[node name="StaticBody2D9" parent="." instance=ExtResource( 10 )]
+[node name="big cloud" parent="." instance=ExtResource( 10 )]
 position = Vector2( -5270.79, -671.704 )
 scale = Vector2( 125, 45 )
-
-[node name="StaticBody2D11" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1274.07, 1383.69 )
 
 [node name="cloud4" parent="." instance=ExtResource( 1 )]
 position = Vector2( -217.303, -369.432 )
@@ -194,5 +215,21 @@ position = Vector2( 1298.33, -1204.67 )
 position = Vector2( 293.342, -1319.77 )
 scale = Vector2( 7, 3 )
 
-[node name="sewer floor" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1604.09, 1377.54 )
+[node name="sewer floor" parent="." instance=ExtResource( 9 )]
+position = Vector2( -2063.18, 1079.45 )
+
+[node name="sewer floor5" parent="." instance=ExtResource( 6 )]
+position = Vector2( -4000.44, 1317.25 )
+
+[node name="sewer floor4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -4677.08, 1315.78 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 13 )]
+position = Vector2( -4333.74, 1323.24 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 9 )]
+position = Vector2( -3362.51, 1349.4 )
+
+[node name="sewer floor3" parent="." instance=ExtResource( 9 )]
+position = Vector2( -2719.31, 1195.82 )
+z_index = 1

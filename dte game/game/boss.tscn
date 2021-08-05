@@ -129,7 +129,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=10]
-resource_name = "not awake"
+resource_name = "not_awake"
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -146,6 +146,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=11]
+resource_name = "waking_up"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -160,10 +161,10 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 217.955, 145.066 )
+extents = Vector2( 262, 169 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 462.419, 205.474 )
+extents = Vector2( 470, 293 )
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 89.5908, 75.2189 )
@@ -176,7 +177,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 29
+frame = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.445465, 0.44545 )
@@ -191,8 +192,8 @@ anims/defence = SubResource( 5 )
 anims/fly = SubResource( 7 )
 anims/healing = SubResource( 8 )
 anims/idle = SubResource( 9 )
-"anims/not awake" = SubResource( 10 )
-anims/undefence = SubResource( 11 )
+anims/not_awake = SubResource( 10 )
+anims/waking_up = SubResource( 11 )
 
 [node name="chasing" type="Area2D" parent="."]
 
@@ -205,12 +206,13 @@ shape = SubResource( 12 )
 shape = SubResource( 13 )
 
 [node name="close attack" type="Area2D" parent="."]
+position = Vector2( 2, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="close attack"]
 shape = SubResource( 14 )
 
 [connection signal="body_entered" from="chasing" to="." method="_on_chasing_body_entered"]
 [connection signal="body_exited" from="chasing" to="." method="_on_chasing_body_exited"]
-[connection signal="area_entered" from="undefence" to="." method="_on_undefence_area_entered"]
+[connection signal="body_entered" from="undefence" to="." method="_on_undefence_body_entered"]
 [connection signal="body_entered" from="close attack" to="." method="_on_close_attack_body_entered"]
 [connection signal="body_exited" from="close attack" to="." method="_on_close_attack_body_exited"]

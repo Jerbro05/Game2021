@@ -25,14 +25,14 @@ _global_script_classes=[ {
 "path": "res://game/boss.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "flying",
-"language": "GDScript",
-"path": "res://game/KinematicBody2D.gd"
-}, {
-"base": "KinematicBody2D",
 "class": "lil",
 "language": "GDScript",
 "path": "res://game/lil enemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "reeper",
+"language": "GDScript",
+"path": "res://game/KinematicBody2D.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "slime",
@@ -43,8 +43,8 @@ _global_script_class_icons={
 "Enemy": "",
 "bird": "",
 "boss": "",
-"flying": "",
 "lil": "",
+"reeper": "",
 "slime": ""
 }
 

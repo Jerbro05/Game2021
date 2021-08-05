@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var gravity = 5500
-class_name flying
+class_name reeper
 onready var player = get_tree().get_nodes_in_group("Player")
 var state = "fade" 
 var speed = 400
