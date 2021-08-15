@@ -4,7 +4,7 @@ export (int) var gravity = 5500
 class_name reeper
 onready var player = get_tree().get_nodes_in_group("Player")
 var state = "fade" 
-var speed = 400
+var speed = 175
 var velocity = Vector2.ZERO
 var target
 var can_see = false
@@ -28,12 +28,17 @@ func idle():
 	$AnimationPlayer.play("idle") 
 
 func chasing(delta):
-	velocity.y += delta
+	#velocity.y += delta
 	var player_position = player.global_position
-	if position.x < player_position.x :
+	if global_position.x < player_position.x :
 		velocity.x = speed * delta
 	else:
 		velocity.x = -speed * delta
+	
+	if global_position.y < player_position.y :
+		velocity.y = speed/2 * delta
+	else:
+		velocity.y = -speed/2 * delta
 		
 	if not attacking:
 		if velocity.x != 0 : 
@@ -46,8 +51,8 @@ func chasing(delta):
 			$AnimationPlayer.play("idle") 
 
 	if target:
-		velocity = move_and_slide(velocity, Vector2.UP)
-		position = position.move_toward(player_position, speed * delta)
+		velocity = move_and_slide(velocity * speed, Vector2.UP)
+#		position = position.move_toward(player_position, speed * delta)
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):

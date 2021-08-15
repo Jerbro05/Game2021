@@ -1,0 +1,269 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://things/1c172d231cf4933.png" type="Texture" id=1]
+[ext_resource path="res://castle floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/test.player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://things/sign.png" type="Texture" id=4]
+[ext_resource path="res://game/3x3 wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/lil.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/bird.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/sliming.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/flying reeper.tscn" type="PackedScene" id=10]
+[ext_resource path="res://door.tscn" type="PackedScene" id=11]
+
+[node name="tutoral" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -6104.0
+margin_top = -509.0
+margin_right = 4681.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="door" parent="." instance=ExtResource( 11 )]
+position = Vector2( -5942.09, 46.298 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -4871.48, 277.567 )
+scale = Vector2( 1, 1 )
+
+[node name="ground ez2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 188.221, 282.512 )
+
+[node name="ground ez" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2309.6, 266.224 )
+
+[node name="reaper" parent="." instance=ExtResource( 10 )]
+position = Vector2( -2949.49, 162.874 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="bird" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1793.15, 210.819 )
+
+[node name="ground hard" parent="." instance=ExtResource( 7 )]
+position = Vector2( -540.492, 294.477 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1068, 313 )
+
+[node name="walking sign" type="Sprite" parent="."]
+position = Vector2( 4250, 190 )
+texture = ExtResource( 4 )
+
+[node name="walking" type="Label" parent="walking sign"]
+margin_left = -115.0
+margin_top = -109.0
+margin_right = 136.0
+margin_bottom = 12.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "welcome to Samori run. in this
+game to move you use w,a,s,d or the 
+arrow keys a and d are used to walk 
+left and right w and space are used 
+to jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="attacking sign" type="Sprite" parent="."]
+position = Vector2( 2902.18, 163.362 )
+texture = ExtResource( 4 )
+
+[node name="attacking" type="Label" parent="attacking sign"]
+margin_left = -125.0
+margin_top = -101.989
+margin_right = 157.0
+margin_bottom = 32.0109
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "next thing you'll need to know is
+ how to attack, you have two attacks 
+a wide slash which is your left click and  
+and a thin slash that is your right click
+Test this on this up coming enemy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy sign" type="Sprite" parent="."]
+position = Vector2( 1599.45, 166.055 )
+texture = ExtResource( 4 )
+
+[node name="enemys" type="Label" parent="enemy sign"]
+margin_left = -123.378
+margin_top = -124.0
+margin_right = 122.622
+margin_bottom = 4.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "there are lots of enemys in this game
+ some that can fly and some that walk 
+there are 3 flying enemys and 3 
+walking enemys. the one you just killed
+or passed was the base enemy a 
+skeleton one of the weekest enemys in
+this game there is so many enemys 
+that you will have to kill or run past"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="flying" type="Sprite" parent="."]
+position = Vector2( -1160.11, 161.292 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="flying"]
+margin_left = -120.0
+margin_top = -125.0
+margin_right = 132.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "those were all the ground enemys you 
+will see in this game next up is the 
+flying enemys they can obviously fly "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="health" type="Sprite" parent="."]
+position = Vector2( -4054.3, 157.073 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="health"]
+margin_left = -122.0
+margin_top = -124.0
+margin_right = 135.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "after that fight you might need some 
+health look for health packs floating 
+around they give you 50 health which 
+is half. theres no other way to gain back 
+health other then this"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sign" type="Sprite" parent="."]
+position = Vector2( -5080.64, 158.245 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="sign"]
+margin_left = -119.0
+margin_top = -127.0
+margin_right = 129.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "now that your all ready to play walk 
+towords the door. if you wish to 
+read any of these signs again just walk 
+back the way you came. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( -184.323, 508.054 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 840.959, 507.871 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1353.63, 507.809 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4422.7, 509.047 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 329.291, 507.819 )
+
+[node name="Node2D6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3907.8, 509.029 )
+
+[node name="Node2D7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1866.27, 508.734 )
+
+[node name="Node2D8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3393.6, 508.795 )
+
+[node name="Node2D9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2365.71, 508.751 )
+
+[node name="Node2D10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2879.75, 508.787 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3606.11, 294.127 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3677.29, 293.317 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3748.87, 291.73 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3537.44, 293.167 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3573.91, 222.827 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3642.81, 225.358 )
+
+[node name="StaticBody2D7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3712.02, 225.508 )
+
+[node name="StaticBody2D8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3606.35, 160.381 )
+
+[node name="StaticBody2D9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3667.16, 161.024 )
+
+[node name="StaticBody2D10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3634.02, 96.7982 )
+
+[node name="Node2D11" parent="." instance=ExtResource( 2 )]
+position = Vector2( -697.921, 508.363 )
+
+[node name="Node2D12" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1212.6, 508.363 )
+
+[node name="Node2D13" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1727.52, 508.462 )
+
+[node name="Node2D14" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2243.19, 508.64 )
+
+[node name="Node2D15" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2758.84, 508.615 )
+
+[node name="Node2D16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5128.44, 49.8782 )
+rotation = 1.5708
+scale = Vector2( 1, 1 )
+
+[node name="Node2D17" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4819.41, 509.112 )
+
+[node name="Node2D18" parent="." instance=ExtResource( 2 )]
+position = Vector2( -5335.16, 508.364 )
+
+[node name="Node2D19" parent="." instance=ExtResource( 2 )]
+position = Vector2( -5850.42, 508.091 )
+
+[node name="Node2D20" parent="." instance=ExtResource( 2 )]
+position = Vector2( -3274.12, 508.91 )
+
+[node name="Node2D21" parent="." instance=ExtResource( 2 )]
+position = Vector2( -3788.58, 508.91 )
+
+[node name="Node2D22" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4304.35, 509.071 )
+
+[node name="Node2D23" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6552.9, 47.9458 )
+rotation = 1.5708
+scale = Vector2( 1, 1 )

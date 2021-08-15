@@ -22,8 +22,8 @@ var melee_2 = false
 var damage 
 var can_fire = true
 var is_dead = false
-var slash_1 = preload("res://slash_1.tscn")
-var slash_2 = preload("res://slash_2.tscn")
+onready var slash_1 = preload("res://slash_1.tscn")
+onready var slash_2 = preload("res://slash_2.tscn")
 var velocity = Vector2.ZERO
 
 func get_input():
@@ -65,15 +65,20 @@ func _physics_process(delta):
 		if velocity.y > 0:
 			animation_state.travel("drop")
 	
-	if Input.is_action_just_pressed("right_click") and can_fire:
+	if Input.is_action_pressed("right_click") and can_fire:
 		animation_state.travel("swipe_1")
-		var slash_1_instance = slash_1.instance()
-		slash_1_instance.global_position = get_global_position()
-		slash_1_instance.direction = facing
-		get_tree().get_root().add_child(slash_1_instance)
 
-	elif Input.is_action_just_pressed("left_click") and can_fire:
+
+	elif Input.is_action_pressed("left_click") and can_fire:
 		animation_state.travel("swipe_2")
+
+func slash_1_attack():
+	var slash_1_instance = slash_1.instance()
+	slash_1_instance.global_position = get_global_position()
+	slash_1_instance.direction = facing
+	get_tree().get_root().add_child(slash_1_instance)
+
+func slash_2_attack():
 		var slash_2_instance = slash_2.instance()
 		slash_2_instance.direction = facing
 		get_tree().get_root().add_child(slash_2_instance)

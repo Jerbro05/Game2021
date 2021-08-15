@@ -1,6 +1,6 @@
 extends MarginContainer
 
-const world = preload("res://game/world.tscn")
+const world = preload("res://tutoral.tscn")
 
 onready var picker_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/picker
 onready var picker_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/picker
