@@ -87,7 +87,8 @@ vframes = 7
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.157494, 0.157486 )
+visible = false
+position = Vector2( -0.217506, 3.40749 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -97,11 +98,13 @@ anims/sliming = SubResource( 4 )
 anims/spitting = SubResource( 5 )
 
 [node name="chasing" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chasing"]
 shape = SubResource( 6 )
 
 [node name="spitting" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitting"]
 shape = SubResource( 7 )

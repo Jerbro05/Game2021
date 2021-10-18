@@ -180,6 +180,7 @@ vframes = 9
 frame = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.445465, 0.44545 )
 shape = SubResource( 1 )
 
@@ -196,16 +197,19 @@ anims/not_awake = SubResource( 10 )
 anims/waking_up = SubResource( 11 )
 
 [node name="chasing" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chasing"]
 shape = SubResource( 12 )
 
 [node name="undefence" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="undefence"]
 shape = SubResource( 13 )
 
 [node name="close attack" type="Area2D" parent="."]
+visible = false
 position = Vector2( 2, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="close attack"]

@@ -1,446 +1,591 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://game/cloud.tscn" type="PackedScene" id=1]
-[ext_resource path="res://game/test.player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/ground.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/pipe.tscn" type="PackedScene" id=4]
-[ext_resource path="res://things/wall.jpg" type="Texture" id=5]
-[ext_resource path="res://game/sewer floor.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/castle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://game/ground up.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/sewer up.tscn" type="PackedScene" id=9]
-[ext_resource path="res://game/huge cloud.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/enemy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://game/wall.tscn" type="PackedScene" id=12]
-[ext_resource path="res://game/sewer pit.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/lil.tscn" type="PackedScene" id=14]
-[ext_resource path="res://game/flying reeper.tscn" type="PackedScene" id=15]
-[ext_resource path="res://game/sliming.tscn" type="PackedScene" id=16]
-[ext_resource path="res://game/boss.tscn" type="PackedScene" id=17]
-[ext_resource path="res://game/bird.tscn" type="PackedScene" id=18]
-[ext_resource path="res://things/9530132de98ea26 (1).png" type="Texture" id=19]
+[ext_resource path="res://things/wall.jpg" type="Texture" id=1]
+[ext_resource path="res://game/sliming.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/flying reeper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/bird.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/test.player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/lil.tscn" type="PackedScene" id=7]
+[ext_resource path="res://things/9530132de98ea26 (1).png" type="Texture" id=8]
+[ext_resource path="res://game/huge cloud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/cloud.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/castle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/sewer floor.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/boss.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/ground.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/pipe.tscn" type="PackedScene" id=15]
+[ext_resource path="res://game/ground up.tscn" type="PackedScene" id=16]
+[ext_resource path="res://game/sewer pit.tscn" type="PackedScene" id=17]
+[ext_resource path="res://game/wall.tscn" type="PackedScene" id=18]
+[ext_resource path="res://game/sewer up.tscn" type="PackedScene" id=19]
+[ext_resource path="res://game/enemy castle.tscn" type="PackedScene" id=20]
+[ext_resource path="res://game/tower.tscn" type="PackedScene" id=21]
+[ext_resource path="res://game/health.tscn" type="PackedScene" id=22]
 
 [node name="world" type="Node2D"]
-position = Vector2( 3470.22, -40.363 )
+position = Vector2( 3469.22, -39.363 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -13055.5
-margin_top = -1869.02
-margin_right = 1791.47
-margin_bottom = 554.98
+margin_left = -13264.3
+margin_top = -1869.0
+margin_right = 1780.69
+margin_bottom = 543.0
 color = Color( 0.235294, 0.654902, 0.815686, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="sewer walls" type="TextureRect" parent="."]
-margin_left = -13059.0
-margin_top = 546.0
+margin_left = -13254.0
+margin_top = 403.0
 margin_right = 1777.0
 margin_bottom = 1817.0
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="wall" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1779.15, -282.916 )
+[node name="sewer boss" parent="." instance=ExtResource( 13 )]
+position = Vector2( -12625, 1427.18 )
 
-[node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1057.68, 288.82 )
-scale = Vector2( 1.75, 1.6 )
+[node name="ground boss" parent="." instance=ExtResource( 13 )]
+position = Vector2( -11399.2, 47.8903 )
+scale = Vector2( 1.25, 1.25 )
 
-[node name="bird" parent="." instance=ExtResource( 18 )]
+[node name="wall" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2064.65, -109.356 )
+
+[node name="bird" parent="." instance=ExtResource( 4 )]
 position = Vector2( -6596.72, -806.238 )
 
-[node name="bird2" parent="." instance=ExtResource( 18 )]
+[node name="bird2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -5550.92, -884.043 )
 
-[node name="bird3" parent="." instance=ExtResource( 18 )]
+[node name="bird3" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2178.85, -796.819 )
 
-[node name="bird4" parent="." instance=ExtResource( 18 )]
+[node name="bird4" parent="." instance=ExtResource( 4 )]
 position = Vector2( -670.849, -516.819 )
 
-[node name="bird5" parent="." instance=ExtResource( 18 )]
+[node name="bird5" parent="." instance=ExtResource( 4 )]
 position = Vector2( -7551.31, -605.977 )
 
-[node name="bird6" parent="." instance=ExtResource( 18 )]
+[node name="bird6" parent="." instance=ExtResource( 4 )]
 position = Vector2( -4621.9, -1176.72 )
 
-[node name="bird7" parent="." instance=ExtResource( 18 )]
+[node name="bird7" parent="." instance=ExtResource( 4 )]
 position = Vector2( -3451.98, -918.075 )
 
-[node name="bird8" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1013.15, -799.916 )
+[node name="ripper" parent="." instance=ExtResource( 7 )]
+position = Vector2( -8466.74, 242.408 )
 
-[node name="boss" parent="." instance=ExtResource( 17 )]
-position = Vector2( 180.33, -1518.9 )
+[node name="ripper2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -7626.59, 240.29 )
 
-[node name="ground hard3" parent="." instance=ExtResource( 14 )]
-position = Vector2( -7625.53, 224.398 )
+[node name="ripper3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -10363.5, 126.829 )
 
-[node name="ground hard4" parent="." instance=ExtResource( 14 )]
-position = Vector2( -8470.98, 234.992 )
+[node name="ground hard" parent="." instance=ExtResource( 7 )]
+position = Vector2( -6528.73, 238.755 )
 
-[node name="reaper" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1165.25, 1060.43 )
+[node name="flying reeper4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -5651.45, 99.9851 )
+scale = Vector2( 2, 2 )
 
-[node name="slime" parent="." instance=ExtResource( 16 )]
-position = Vector2( -940.97, 1161.28 )
-scale = Vector2( 1, 1 )
+[node name="flying reeper3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -6747.97, 1396.36 )
+scale = Vector2( 2, 2 )
 
-[node name="slime2" parent="." instance=ExtResource( 16 )]
-position = Vector2( -5230.15, 1211.62 )
-scale = Vector2( 1, 1 )
+[node name="flying reeper2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 11.8256, -1381.64 )
+scale = Vector2( 2, 2 )
 
-[node name="slime3" parent="." instance=ExtResource( 16 )]
-position = Vector2( -1493.75, 1037.17 )
-scale = Vector2( 1, 1 )
+[node name="flying reeper" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1539.32, 1120.74 )
+scale = Vector2( 2, 2 )
 
-[node name="slime4" parent="." instance=ExtResource( 16 )]
-position = Vector2( -2239.91, 938.284 )
-scale = Vector2( 1, 1 )
+[node name="slime" parent="." instance=ExtResource( 2 )]
+position = Vector2( -935.97, 1208.28 )
+scale = Vector2( 2, 2 )
 
-[node name="slime5" parent="." instance=ExtResource( 16 )]
-position = Vector2( -3676.41, 1147.38 )
-scale = Vector2( 1, 1 )
+[node name="slime2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -5234.35, 1259.19 )
+scale = Vector2( 2, 2 )
 
-[node name="slime6" parent="." instance=ExtResource( 16 )]
-position = Vector2( 82.2571, 1220.18 )
-scale = Vector2( 1, 1 )
+[node name="slime3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1510.44, 1088.52 )
+scale = Vector2( 2, 2 )
 
-[node name="slime7" parent="." instance=ExtResource( 16 )]
-position = Vector2( -5811.4, 1280.23 )
-scale = Vector2( 1, 1 )
+[node name="slime4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2347.21, 988.596 )
+scale = Vector2( 2, 2 )
 
-[node name="slime8" parent="." instance=ExtResource( 16 )]
-position = Vector2( -4674.89, 1186.28 )
-scale = Vector2( 1, 1 )
+[node name="slime5" parent="." instance=ExtResource( 2 )]
+position = Vector2( -3675.08, 1208.07 )
+scale = Vector2( 2, 2 )
 
-[node name="slime9" parent="." instance=ExtResource( 16 )]
-position = Vector2( -6472.65, 1408.8 )
-scale = Vector2( 1, 1 )
+[node name="slime6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -460.596, 1267.59 )
+scale = Vector2( 2, 2 )
 
-[node name="ground ez" parent="." instance=ExtResource( 11 )]
-position = Vector2( -891.082, 192.612 )
-scale = Vector2( 1, 1 )
+[node name="slime7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -5818.97, 1343.78 )
+scale = Vector2( 2, 2 )
 
-[node name="ground ez2" parent="." instance=ExtResource( 11 )]
-position = Vector2( -5632.93, 165.202 )
+[node name="slime8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4671.53, 1257.39 )
+scale = Vector2( 2, 2 )
 
-[node name="ground ez3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -6782.38, 207.742 )
+[node name="slime9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6290.76, 1452.86 )
+scale = Vector2( 2, 2 )
 
-[node name="ground ez4" parent="." instance=ExtResource( 11 )]
+[node name="slime10" parent="." instance=ExtResource( 2 )]
+position = Vector2( -11056.4, 1528.76 )
+scale = Vector2( 2, 2 )
+
+[node name="ground ez" parent="." instance=ExtResource( 5 )]
+position = Vector2( -877.958, 204.564 )
+
+[node name="ground ez2" parent="." instance=ExtResource( 5 )]
 position = Vector2( -3049.62, 136.938 )
 
-[node name="ground ez5" parent="." instance=ExtResource( 11 )]
+[node name="ground ez3" parent="." instance=ExtResource( 5 )]
 position = Vector2( -3898.76, 54.2989 )
 
-[node name="ground ez6" parent="." instance=ExtResource( 11 )]
-position = Vector2( -2020.46, 193.822 )
+[node name="ground ez4" parent="." instance=ExtResource( 5 )]
+position = Vector2( -2019.62, 201.39 )
 
-[node name="big cloud" parent="." instance=ExtResource( 10 )]
+[node name="ground ez5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 107.427, 293.249 )
+
+[node name="player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1121.6, 283.218 )
+scale = Vector2( 1.75, 1.6 )
+
+[node name="big cloud" parent="." instance=ExtResource( 9 )]
 position = Vector2( -4529.13, -558.289 )
 scale = Vector2( 100, 45 )
 
-[node name="cloud" parent="." instance=ExtResource( 1 )]
+[node name="cloud" parent="." instance=ExtResource( 10 )]
 position = Vector2( 697.02, -177.835 )
 
-[node name="cloud2" parent="." instance=ExtResource( 1 )]
+[node name="cloud2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 895.958, 25.6588 )
 
-[node name="cloud3" parent="." instance=ExtResource( 1 )]
+[node name="cloud3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 247.063, -255.452 )
 scale = Vector2( 2, 1 )
 
-[node name="cloud4" parent="." instance=ExtResource( 1 )]
+[node name="cloud4" parent="." instance=ExtResource( 10 )]
 position = Vector2( -217.303, -369.432 )
 scale = Vector2( 1.5, 1 )
 
-[node name="cloud5" parent="." instance=ExtResource( 1 )]
+[node name="cloud5" parent="." instance=ExtResource( 10 )]
 position = Vector2( -1285.81, -425.444 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="cloud6" parent="." instance=ExtResource( 1 )]
+[node name="cloud6" parent="." instance=ExtResource( 10 )]
 position = Vector2( -663.147, -410.797 )
 scale = Vector2( 0.8, 1 )
 
-[node name="cloud7" parent="." instance=ExtResource( 1 )]
+[node name="cloud7" parent="." instance=ExtResource( 10 )]
 position = Vector2( -1049.79, -316.538 )
 
-[node name="cloud8" parent="." instance=ExtResource( 1 )]
+[node name="cloud8" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1113.34, -349.421 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="cloud9" parent="." instance=ExtResource( 1 )]
+[node name="cloud9" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1537.73, -541.679 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="cloud10" parent="." instance=ExtResource( 1 )]
+[node name="cloud10" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1034.05, -679.163 )
 scale = Vector2( 2, 1 )
 
-[node name="cloud11" parent="." instance=ExtResource( 1 )]
+[node name="cloud11" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1417.26, -818.973 )
 scale = Vector2( 1.5, 1 )
 
-[node name="cloud12" parent="." instance=ExtResource( 1 )]
+[node name="cloud12" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1049.11, -979.971 )
 scale = Vector2( 1, 0.8 )
 
-[node name="cloud13" parent="." instance=ExtResource( 1 )]
+[node name="cloud13" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1302.82, -1168.75 )
 
-[node name="cloud14" parent="." instance=ExtResource( 1 )]
+[node name="cloud14" parent="." instance=ExtResource( 10 )]
 position = Vector2( 297.832, -1283.85 )
 scale = Vector2( 7, 3 )
 
-[node name="cloud15" parent="." instance=ExtResource( 1 )]
-position = Vector2( -8014.82, -359.909 )
-scale = Vector2( 2.5, 1 )
-
-[node name="cloud16" parent="." instance=ExtResource( 1 )]
-position = Vector2( -8357.43, -289.54 )
-scale = Vector2( 1.5, 1 )
-
-[node name="cloud17" parent="." instance=ExtResource( 1 )]
-position = Vector2( -8653.8, -219.837 )
+[node name="cloud15" parent="." instance=ExtResource( 10 )]
+position = Vector2( -7952.91, -375.783 )
 scale = Vector2( 2, 1 )
 
-[node name="cloud18" parent="." instance=ExtResource( 1 )]
-position = Vector2( -9039.97, -133.788 )
-scale = Vector2( 2, 1 )
+[node name="cloud16" parent="." instance=ExtResource( 10 )]
+position = Vector2( -8246.31, -341.924 )
+scale = Vector2( 1.25, 1 )
 
-[node name="cloud19" parent="." instance=ExtResource( 1 )]
-position = Vector2( -9331.19, -78.3321 )
+[node name="cloud17" parent="." instance=ExtResource( 10 )]
+position = Vector2( -8504.58, -284.92 )
+scale = Vector2( 1.75, 1 )
 
-[node name="ground" parent="." instance=ExtResource( 3 )]
+[node name="cloud18" parent="." instance=ExtResource( 10 )]
+position = Vector2( -8797.1, -224.27 )
+scale = Vector2( 1.75, 1 )
+
+[node name="ground" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1006.3, 480.984 )
 
-[node name="ground33" parent="." instance=ExtResource( 3 )]
-position = Vector2( -7095.6, 410.004 )
+[node name="ground33" parent="." instance=ExtResource( 14 )]
+position = Vector2( -7095.6, 409.949 )
 
-[node name="ground2" parent="." instance=ExtResource( 3 )]
+[node name="ground2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 29.527, 480.984 )
 
-[node name="ground3" parent="." instance=ExtResource( 3 )]
+[node name="ground3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 247.559, 480.984 )
 
-[node name="ground4" parent="." instance=ExtResource( 3 )]
+[node name="ground4" parent="." instance=ExtResource( 14 )]
 position = Vector2( 468.712, 480.984 )
 
-[node name="ground5" parent="." instance=ExtResource( 3 )]
+[node name="ground5" parent="." instance=ExtResource( 14 )]
 position = Vector2( -190.792, 480.984 )
 
-[node name="ground6" parent="." instance=ExtResource( 3 )]
+[node name="ground6" parent="." instance=ExtResource( 14 )]
 position = Vector2( 786.446, 480.984 )
 
-[node name="ground7" parent="." instance=ExtResource( 3 )]
+[node name="ground7" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1227.13, 480.984 )
 
-[node name="ground8" parent="." instance=ExtResource( 3 )]
+[node name="ground8" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1446.65, 479.963 )
 
-[node name="ground9" parent="." instance=ExtResource( 3 )]
+[node name="ground9" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1664.79, 479.963 )
 
-[node name="ground10" parent="." instance=ExtResource( 3 )]
+[node name="ground10" parent="." instance=ExtResource( 14 )]
 position = Vector2( -1068.58, 388.932 )
 
-[node name="ground11" parent="." instance=ExtResource( 3 )]
+[node name="ground11" parent="." instance=ExtResource( 14 )]
 position = Vector2( -1289, 388.932 )
 
-[node name="ground12" parent="." instance=ExtResource( 3 )]
+[node name="ground12" parent="." instance=ExtResource( 14 )]
 position = Vector2( -1508.35, 388.932 )
 
-[node name="ground13" parent="." instance=ExtResource( 3 )]
+[node name="ground13" parent="." instance=ExtResource( 14 )]
 position = Vector2( -1729.05, 388.932 )
 
-[node name="ground14" parent="." instance=ExtResource( 3 )]
+[node name="ground14" parent="." instance=ExtResource( 14 )]
 position = Vector2( -1949.74, 388.932 )
 
-[node name="ground15" parent="." instance=ExtResource( 3 )]
+[node name="ground15" parent="." instance=ExtResource( 14 )]
 position = Vector2( -2168.6, 388.932 )
 
-[node name="ground16" parent="." instance=ExtResource( 3 )]
+[node name="ground16" parent="." instance=ExtResource( 14 )]
 position = Vector2( -2387.31, 388.932 )
 
-[node name="StaticBody2D3" parent="." instance=ExtResource( 8 )]
+[node name="ground50" parent="." instance=ExtResource( 16 )]
 position = Vector2( -4798.2, 317.949 )
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 8 )]
+[node name="ground49" parent="." instance=ExtResource( 16 )]
 position = Vector2( -4469.87, 258.454 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 8 )]
+[node name="ground48" parent="." instance=ExtResource( 16 )]
 position = Vector2( -4138.27, 206.833 )
 
-[node name="ground17" parent="." instance=ExtResource( 8 )]
+[node name="ground17" parent="." instance=ExtResource( 16 )]
 position = Vector2( -3808.2, 251.003 )
 
-[node name="ground18" parent="." instance=ExtResource( 8 )]
+[node name="ground18" parent="." instance=ExtResource( 16 )]
 position = Vector2( -3476.86, 295.703 )
 
-[node name="ground19" parent="." instance=ExtResource( 8 )]
-position = Vector2( -3149.16, 335.213 )
+[node name="ground19" parent="." instance=ExtResource( 16 )]
+position = Vector2( -3149.16, 335.164 )
 
-[node name="ground20" parent="." instance=ExtResource( 8 )]
+[node name="ground20" parent="." instance=ExtResource( 16 )]
 position = Vector2( -2819.89, 335.164 )
 
-[node name="ground21" parent="." instance=ExtResource( 3 )]
-position = Vector2( -2606.06, 387.518 )
+[node name="ground21" parent="." instance=ExtResource( 14 )]
+position = Vector2( -2606.06, 388.932 )
 
-[node name="ground22" parent="." instance=ExtResource( 8 )]
+[node name="ground22" parent="." instance=ExtResource( 16 )]
 position = Vector2( -743.559, 393.809 )
 
-[node name="ground23" parent="." instance=ExtResource( 8 )]
+[node name="ground23" parent="." instance=ExtResource( 16 )]
 position = Vector2( -414.2, 393.809 )
 
-[node name="ground24" parent="." instance=ExtResource( 3 )]
-position = Vector2( -5125.54, 360.029 )
+[node name="ground24" parent="." instance=ExtResource( 14 )]
+position = Vector2( -5125.54, 360.574 )
 
-[node name="ground25" parent="." instance=ExtResource( 3 )]
-position = Vector2( -5346.09, 359.991 )
+[node name="ground25" parent="." instance=ExtResource( 14 )]
+position = Vector2( -5346.09, 360.574 )
 
-[node name="ground26" parent="." instance=ExtResource( 3 )]
-position = Vector2( -5565.28, 360.116 )
+[node name="ground26" parent="." instance=ExtResource( 14 )]
+position = Vector2( -5565.28, 360.574 )
 
-[node name="ground28" parent="." instance=ExtResource( 3 )]
-position = Vector2( -6002.92, 360.493 )
+[node name="ground28" parent="." instance=ExtResource( 14 )]
+position = Vector2( -6002.92, 360.574 )
 
-[node name="ground29" parent="." instance=ExtResource( 3 )]
+[node name="ground29" parent="." instance=ExtResource( 14 )]
 position = Vector2( -6223.38, 360.574 )
 
-[node name="ground27" parent="." instance=ExtResource( 3 )]
-position = Vector2( -5785.43, 360.225 )
+[node name="ground27" parent="." instance=ExtResource( 14 )]
+position = Vector2( -5785.43, 360.574 )
 
-[node name="ground30" parent="." instance=ExtResource( 3 )]
-position = Vector2( -6440.79, 409.903 )
+[node name="ground30" parent="." instance=ExtResource( 14 )]
+position = Vector2( -6439.73, 409.949 )
 
-[node name="ground31" parent="." instance=ExtResource( 3 )]
+[node name="ground31" parent="." instance=ExtResource( 14 )]
 position = Vector2( -6660.1, 409.949 )
 
-[node name="ground32" parent="." instance=ExtResource( 3 )]
-position = Vector2( -6878.81, 409.991 )
+[node name="ground32" parent="." instance=ExtResource( 14 )]
+position = Vector2( -6878.81, 409.949 )
 
-[node name="ground35" parent="." instance=ExtResource( 3 )]
-position = Vector2( -7758.12, 409.884 )
+[node name="ground35" parent="." instance=ExtResource( 14 )]
+position = Vector2( -7758.12, 409.949 )
 
-[node name="ground36" parent="." instance=ExtResource( 3 )]
-position = Vector2( -7978.99, 410.608 )
+[node name="ground36" parent="." instance=ExtResource( 14 )]
+position = Vector2( -7978.99, 409.949 )
 
-[node name="ground37" parent="." instance=ExtResource( 3 )]
-position = Vector2( -7537.24, 409.924 )
+[node name="ground37" parent="." instance=ExtResource( 14 )]
+position = Vector2( -7537.24, 409.949 )
 
-[node name="ground38" parent="." instance=ExtResource( 3 )]
-position = Vector2( -8198.65, 411.406 )
+[node name="ground38" parent="." instance=ExtResource( 14 )]
+position = Vector2( -8198.65, 409.949 )
 
-[node name="ground39" parent="." instance=ExtResource( 3 )]
-position = Vector2( -8417.63, 412.034 )
+[node name="ground39" parent="." instance=ExtResource( 14 )]
+position = Vector2( -8417.63, 409.949 )
 
-[node name="ground40" parent="." instance=ExtResource( 3 )]
-position = Vector2( -8638.75, 410.745 )
+[node name="ground40" parent="." instance=ExtResource( 14 )]
+position = Vector2( -8638.75, 409.949 )
 
-[node name="ground41" parent="." instance=ExtResource( 3 )]
-position = Vector2( -8852.32, 364.239 )
+[node name="ground41" parent="." instance=ExtResource( 14 )]
+position = Vector2( -8852.32, 365.239 )
 
-[node name="ground42" parent="." instance=ExtResource( 3 )]
-position = Vector2( -9071.54, 364.239 )
+[node name="ground43" parent="." instance=ExtResource( 14 )]
+position = Vector2( -9392.63, 364.239 )
 
-[node name="ground43" parent="." instance=ExtResource( 3 )]
-position = Vector2( -9290.77, 364.239 )
+[node name="ground42" parent="." instance=ExtResource( 14 )]
+position = Vector2( -9071.54, 365.239 )
 
-[node name="ground44" parent="." instance=ExtResource( 3 )]
-position = Vector2( -9507.47, 364.239 )
+[node name="pipe2" parent="." instance=ExtResource( 15 )]
+position = Vector2( -9225.86, 333.981 )
 
-[node name="ground47" parent="." instance=ExtResource( 8 )]
+[node name="ground44" parent="." instance=ExtResource( 14 )]
+position = Vector2( -9508.97, 364.239 )
+
+[node name="ground47" parent="." instance=ExtResource( 16 )]
 position = Vector2( -10270.9, 302.394 )
 
-[node name="ground45" parent="." instance=ExtResource( 8 )]
-position = Vector2( -9948.45, 302.593 )
+[node name="ground45" parent="." instance=ExtResource( 16 )]
+position = Vector2( -9948.45, 302.394 )
 
-[node name="ground46" parent="." instance=ExtResource( 3 )]
+[node name="ground46" parent="." instance=ExtResource( 14 )]
 position = Vector2( -9729.22, 364.239 )
 
-[node name="ground34" parent="." instance=ExtResource( 3 )]
-position = Vector2( -7316.43, 410.046 )
+[node name="ground34" parent="." instance=ExtResource( 14 )]
+position = Vector2( -7316.43, 409.949 )
 
-[node name="sewer floor" parent="." instance=ExtResource( 9 )]
-position = Vector2( -2063.18, 1132.84 )
+[node name="ground51" parent="." instance=ExtResource( 14 )]
+position = Vector2( -10598.4, 297.519 )
 
-[node name="sewer floor 1" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1604.09, 1377.54 )
+[node name="ground52" parent="." instance=ExtResource( 14 )]
+position = Vector2( -10819.2, 297.519 )
 
-[node name="sewer floor2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 931.435, 1376.54 )
+[node name="ground53" parent="." instance=ExtResource( 14 )]
+position = Vector2( -11037.4, 297.519 )
 
-[node name="sewer floor3" parent="." instance=ExtResource( 9 )]
-position = Vector2( -2719.31, 1264.33 )
+[node name="ground54" parent="." instance=ExtResource( 14 )]
+position = Vector2( -11258.5, 297.519 )
+
+[node name="ground55" parent="." instance=ExtResource( 14 )]
+position = Vector2( -11478.2, 297.519 )
+
+[node name="ground56" parent="." instance=ExtResource( 14 )]
+position = Vector2( -11698.6, 297.519 )
+
+[node name="ground57" parent="." instance=ExtResource( 14 )]
+position = Vector2( -11918.9, 297.519 )
+
+[node name="ground59" parent="." instance=ExtResource( 14 )]
+position = Vector2( -12361, 297.52 )
+
+[node name="ground60" parent="." instance=ExtResource( 14 )]
+position = Vector2( -12580, 297.52 )
+
+[node name="ground61" parent="." instance=ExtResource( 14 )]
+position = Vector2( -12800.7, 297.52 )
+
+[node name="ground62" parent="." instance=ExtResource( 14 )]
+position = Vector2( -13018.1, 297.52 )
+
+[node name="ground58" parent="." instance=ExtResource( 14 )]
+position = Vector2( -12140.3, 297.52 )
+
+[node name="ground63" parent="." instance=ExtResource( 14 )]
+position = Vector2( -13145.7, 297.824 )
+
+[node name="sewer floor" parent="." instance=ExtResource( 19 )]
+position = Vector2( -2063.18, 1172.84 )
+
+[node name="sewer floor 1" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1604.09, 1416.54 )
+
+[node name="sewer floor2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 931.435, 1416.54 )
+
+[node name="sewer floor3" parent="." instance=ExtResource( 19 )]
+position = Vector2( -2719.31, 1304.33 )
 z_index = 1
 
-[node name="sewer floor4" parent="." instance=ExtResource( 6 )]
-position = Vector2( -4677.08, 1367.78 )
+[node name="sewer floor4" parent="." instance=ExtResource( 12 )]
+position = Vector2( -4677.08, 1407.78 )
 
-[node name="sewer floor5" parent="." instance=ExtResource( 6 )]
-position = Vector2( -4001, 1366.64 )
+[node name="sewer floor5" parent="." instance=ExtResource( 12 )]
+position = Vector2( -4001, 1406.64 )
 
-[node name="sewer floor6" parent="." instance=ExtResource( 6 )]
-position = Vector2( -83.0613, 1376.54 )
+[node name="sewer floor6" parent="." instance=ExtResource( 12 )]
+position = Vector2( -83.0615, 1416.54 )
 
-[node name="sewer floor7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 255.141, 1376.54 )
+[node name="sewer floor7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 255.141, 1416.54 )
 
-[node name="sewer floor8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 593.796, 1376.54 )
+[node name="sewer floor8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 593.796, 1416.54 )
 
-[node name="sewer floor9" parent="." instance=ExtResource( 6 )]
-position = Vector2( -421.557, 1376.54 )
+[node name="sewer floor9" parent="." instance=ExtResource( 12 )]
+position = Vector2( -421.558, 1416.54 )
 
-[node name="sewer up" parent="." instance=ExtResource( 9 )]
-position = Vector2( -3362.51, 1349.4 )
+[node name="sewer up" parent="." instance=ExtResource( 19 )]
+position = Vector2( -3362.51, 1389.4 )
 
-[node name="sewer up1" parent="." instance=ExtResource( 9 )]
-position = Vector2( -759.474, 1350.84 )
+[node name="sewer up1" parent="." instance=ExtResource( 19 )]
+position = Vector2( -759.474, 1390.84 )
 
-[node name="sewer up3" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1398.03, 1230 )
+[node name="sewer up3" parent="." instance=ExtResource( 19 )]
+position = Vector2( -1398.03, 1270 )
 
-[node name="sewer up2" parent="." instance=ExtResource( 9 )]
-position = Vector2( -5036.55, 1401.34 )
+[node name="sewer up2" parent="." instance=ExtResource( 19 )]
+position = Vector2( -5036.55, 1441.34 )
 
-[node name="sewer up4" parent="." instance=ExtResource( 9 )]
-position = Vector2( -5704.01, 1484.07 )
+[node name="sewer up4" parent="." instance=ExtResource( 19 )]
+position = Vector2( -5704.01, 1524.07 )
 
-[node name="sewer up5" parent="." instance=ExtResource( 9 )]
-position = Vector2( -6365.12, 1598.37 )
+[node name="sewer up5" parent="." instance=ExtResource( 19 )]
+position = Vector2( -6365.12, 1638.37 )
 
-[node name="slime sewer" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1274.07, 1383.69 )
+[node name="slime sewer" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1273.16, 1423.19 )
 
-[node name="slime sewer2" parent="." instance=ExtResource( 13 )]
-position = Vector2( -4333.74, 1373.84 )
+[node name="slime sewer2" parent="." instance=ExtResource( 17 )]
+position = Vector2( -4333.74, 1413.84 )
 
-[node name="slime sewer3" parent="." instance=ExtResource( 13 )]
-position = Vector2( -6998.62, 1645.23 )
+[node name="slime sewer3" parent="." instance=ExtResource( 17 )]
+position = Vector2( -6999.57, 1684.7 )
 
-[node name="slime sewer4" parent="." instance=ExtResource( 13 )]
-position = Vector2( -8016.04, 1645.23 )
+[node name="slime sewer5" parent="." instance=ExtResource( 17 )]
+position = Vector2( -7337.26, 1684.7 )
 
-[node name="slime sewer5" parent="." instance=ExtResource( 13 )]
-position = Vector2( -7337.26, 1645.23 )
+[node name="slime sewer6" parent="." instance=ExtResource( 17 )]
+position = Vector2( -7675.01, 1684.7 )
 
-[node name="slime sewer6" parent="." instance=ExtResource( 13 )]
-position = Vector2( -7676.74, 1645.23 )
+[node name="StaticBody2D2" parent="." instance=ExtResource( 17 )]
+position = Vector2( -8350.63, 1684.7 )
 
-[node name="pipe" parent="." instance=ExtResource( 4 )]
+[node name="StaticBody2D3" parent="." instance=ExtResource( 17 )]
+position = Vector2( -8688.75, 1684.7 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 17 )]
+position = Vector2( -9027.03, 1684.7 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 17 )]
+position = Vector2( -9365.26, 1684.7 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 17 )]
+position = Vector2( -9703.21, 1684.7 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 17 )]
+position = Vector2( -10380.1, 1684.7 )
+
+[node name="StaticBody2D7" parent="." instance=ExtResource( 17 )]
+position = Vector2( -10041.7, 1684.7 )
+
+[node name="slime sewer4" parent="." instance=ExtResource( 17 )]
+position = Vector2( -8012.73, 1684.7 )
+
+[node name="sewer floor10" parent="." instance=ExtResource( 12 )]
+position = Vector2( -11399, 1678.02 )
+
+[node name="sewer floor11" parent="." instance=ExtResource( 12 )]
+position = Vector2( -11737.3, 1678.02 )
+
+[node name="sewer floor12" parent="." instance=ExtResource( 12 )]
+position = Vector2( -12075.9, 1678.02 )
+
+[node name="sewer floor13" parent="." instance=ExtResource( 12 )]
+position = Vector2( -12412.9, 1678.02 )
+
+[node name="sewer floor14" parent="." instance=ExtResource( 12 )]
+position = Vector2( -10723.4, 1678.02 )
+
+[node name="sewer floor15" parent="." instance=ExtResource( 12 )]
+position = Vector2( -11061.2, 1678.02 )
+
+[node name="tower" parent="." instance=ExtResource( 21 )]
+position = Vector2( -12797.6, 1555.34 )
+
+[node name="tower2" parent="." instance=ExtResource( 21 )]
+position = Vector2( -12967.3, 1583.21 )
+scale = Vector2( 2, 1.5 )
+
+[node name="tower3" parent="." instance=ExtResource( 21 )]
+position = Vector2( -13108, 1575.85 )
+
+[node name="tower4" parent="." instance=ExtResource( 21 )]
+position = Vector2( -13190.9, 1585.82 )
+scale = Vector2( 1, 0.75 )
+
+[node name="sewer floor16" parent="." instance=ExtResource( 12 )]
+position = Vector2( -12746.6, 1678.02 )
+
+[node name="sewer floor17" parent="." instance=ExtResource( 12 )]
+position = Vector2( -13080.6, 1678.02 )
+
+[node name="pipe" parent="." instance=ExtResource( 15 )]
 position = Vector2( 626.792, 424.304 )
 
-[node name="castle" parent="." instance=ExtResource( 7 )]
+[node name="enemy castle" parent="." instance=ExtResource( 20 )]
+position = Vector2( -12437.3, -374.831 )
+scale = Vector2( 2.5, 2.5 )
+
+[node name="castle" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1479.68, 47.92 )
 
-[node name="9530132de98ea26 (1)" type="Sprite" parent="."]
+[node name="castle door" type="Sprite" parent="."]
 position = Vector2( 1474.07, 214.266 )
 scale = Vector2( 0.185551, 0.220797 )
-texture = ExtResource( 19 )
+texture = ExtResource( 8 )
+
+[node name="health5" parent="." instance=ExtResource( 22 )]
+position = Vector2( -5424.59, 1257 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="health4" parent="." instance=ExtResource( 22 )]
+position = Vector2( -2898.06, -845.812 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="health3" parent="." instance=ExtResource( 22 )]
+position = Vector2( -4303.03, 36.0876 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="health2" parent="." instance=ExtResource( 22 )]
+position = Vector2( -9699, 207.71 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="health" parent="." instance=ExtResource( 22 )]
+position = Vector2( -10210.6, 1517.36 )
+scale = Vector2( 0.4, 0.4 )

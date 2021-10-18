@@ -76,7 +76,7 @@ extents = Vector2( 207.067, 61.0264 )
 extents = Vector2( 25.0731, 14.6683 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-scale = Vector2( 2, 2 )
+scale = Vector2( 4, 4 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -87,6 +87,7 @@ vframes = 5
 frame = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0.157494, 0.157486 )
 shape = SubResource( 1 )
 
@@ -97,11 +98,13 @@ anims/sliming = SubResource( 4 )
 anims/spitting = SubResource( 5 )
 
 [node name="chasing" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chasing"]
 shape = SubResource( 6 )
 
 [node name="spitting" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitting"]
 shape = SubResource( 7 )

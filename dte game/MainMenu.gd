@@ -10,6 +10,7 @@ var current_selection = 0
 
 func _ready():
 	set_current_selection(0)
+	UserInterface.visibility(false)
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_down") and current_selection < 2:
@@ -23,20 +24,15 @@ func _process(delta):
 		
 func handle_selection(_current_selection):
 	if _current_selection == 0:
-		get_parent().add_child(world.instance())
-		queue_free()
-	elif _current_selection == 1:
-		print("add options!")
+		UserInterface.visibility(true)
+		get_tree().change_scene("res://tutoral.tscn")
 	elif _current_selection == 2:
 		get_tree().quit()
 
 func set_current_selection(_current_selection):
 	picker_one.text = ""
-	picker_two.text = ""
 	picker_three.text = ""
 	if _current_selection == 0:
 		picker_one.text = ">"
 	if _current_selection == 1:
-		 picker_two.text= ">"
-	if _current_selection == 2:
 		picker_three.text = ">"

@@ -1,13 +1,20 @@
 extends KinematicBody2D
 
+signal health_updated(health)
+signal killed()
+
 export (int) var speed = 1200
 export (int) var jump_speed = -1800
 export (int) var gravity = 4000
 
 var velocity = Vector2.ZERO
 
+export (float) var max_health = 100
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.1
+
+onready var health = max_health setget _set_health
+onready var timer = $timer
 
 func get_input():
 	var dir = 0
@@ -28,19 +35,21 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			velocity.y = jump_speed
+
+func damage(amount):
+	if timer.is_stopped():
+		timer.start()
+		_set_health(health - amount)
+
+func kill():
+	pass
+
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	if health != prev_health:
+		emit_signal("health_updated", health)
+		if health == 0:
+			kill()
+			emit_signal("killed")
 	
-#		if velocity.x != 0 :
-#			$AnimationPlayer.play("run")
-#			if velocity.x < 0: 
-#				$Sprite.flip_h = true
-#
-#			else: 
-#				$Sprite.flip_h = false
-#		else:
-#			$AnimationPlayer.play("idle") 
-#
-#	else:
-#		if velocity.y < 0:
-#			$AnimationPlayer.play("jump")
-#		if velocity.y > 0:
-#			$AnimationPlayer.play("drop")

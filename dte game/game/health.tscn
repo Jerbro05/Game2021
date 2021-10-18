@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://things/health pot (1).png" type="Texture" id=1]
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -12.8406, -49.7552, -12.8406, -47.0223, -15.3633, -47.4427, -14.9429, -36.7213, -13.0508, -36.9315, -12.2099, -14.0171, -28.187, 3.43151, -28.187, 12.0507, -15.3633, 25.2948, 10.7045, 25.505, 23.7384, 12.4711, 23.7384, 2.80084, 8.18179, -13.5966, 7.55113, -36.7213, 10.0738, -36.5111, 10.4943, -46.3916, 7.97157, -47.2325, 8.18179, -49.7552 )
+
+[node name="health pot (1)" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )

@@ -1,29 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://things/Green pit.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 169.34, 114.93 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 41.034, 21.2121 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 39.5898, 23.4194 )
-
 [node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -5.05112, 13.4696 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -132.451, -121.226 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( 124.032, -118.42 )
-shape = SubResource( 3 )
+polygon = PoolVector2Array( -169.088, -156.151, -85.7706, -156.141, -85.9971, -114.311, 86.4393, -114.464, 86.4183, -156.126, 169.368, -156.091, 170.568, 116.459, -169.084, 115.874 )
 
 [node name="Green pit" type="Sprite" parent="."]
 position = Vector2( -4.87854, -6.6524 )

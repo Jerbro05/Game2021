@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://things/1c172d231cf4933.png" type="Texture" id=1]
-[ext_resource path="res://castle floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/castle floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/test.player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://things/sign.png" type="Texture" id=4]
 [ext_resource path="res://game/3x3 wall.tscn" type="PackedScene" id=5]
@@ -10,15 +10,18 @@
 [ext_resource path="res://game/bird.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/sliming.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/flying reeper.tscn" type="PackedScene" id=10]
-[ext_resource path="res://door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://tutoral.gd" type="Script" id=12]
+[ext_resource path="res://game/health.tscn" type="PackedScene" id=13]
 
 [node name="tutoral" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -6104.0
-margin_top = -509.0
-margin_right = 4681.0
-margin_bottom = 600.0
+margin_left = -5955.68
+margin_top = -593.757
+margin_right = 4829.32
+margin_bottom = 515.243
 texture = ExtResource( 1 )
 stretch_mode = 2
 __meta__ = {
@@ -26,30 +29,32 @@ __meta__ = {
 }
 
 [node name="door" parent="." instance=ExtResource( 11 )]
-position = Vector2( -5942.09, 46.298 )
+position = Vector2( -5107.27, 46.298 )
+
+[node name="health pot" parent="." instance=ExtResource( 13 )]
+position = Vector2( -3870.97, 296.769 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -4871.48, 277.567 )
-scale = Vector2( 1, 1 )
-
-[node name="ground ez2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 188.221, 282.512 )
+position = Vector2( 4533.32, 284.994 )
+scale = Vector2( 1.75, 1.6 )
 
 [node name="ground ez" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2309.6, 266.224 )
+position = Vector2( 188.221, 282.512 )
 
 [node name="reaper" parent="." instance=ExtResource( 10 )]
-position = Vector2( -2949.49, 162.874 )
+position = Vector2( -2875.74, 259.224 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="bird" parent="." instance=ExtResource( 8 )]
-position = Vector2( -1793.15, 210.819 )
+position = Vector2( -2085.11, 268.826 )
 
 [node name="ground hard" parent="." instance=ExtResource( 7 )]
 position = Vector2( -540.492, 294.477 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 9 )]
+[node name="slime" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1068, 313 )
+scale = Vector2( 2, 2 )
 
 [node name="walking sign" type="Sprite" parent="."]
 position = Vector2( 4250, 190 )
@@ -63,15 +68,16 @@ margin_bottom = 12.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "welcome to Samori run. in this
 game to move you use w,a,s,d or the 
-arrow keys a and d are used to walk 
-left and right w and space are used 
+arrow keys like most other games you 
+use a and d are used to walk 
+left and right w and space is used 
 to jump"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="attacking sign" type="Sprite" parent="."]
-position = Vector2( 2902.18, 163.362 )
+position = Vector2( 2620.66, 163.362 )
 texture = ExtResource( 4 )
 
 [node name="attacking" type="Label" parent="attacking sign"]
@@ -84,7 +90,7 @@ text = "next thing you'll need to know is
  how to attack, you have two attacks 
 a wide slash which is your left click and  
 and a thin slash that is your right click
-Test this on this up coming enemy"
+Test this on these up coming enemy"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -112,7 +118,7 @@ __meta__ = {
 }
 
 [node name="flying" type="Sprite" parent="."]
-position = Vector2( -1160.11, 161.292 )
+position = Vector2( -1469.22, 161.292 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="flying"]
@@ -123,13 +129,15 @@ margin_bottom = 25.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "those were all the ground enemys you 
 will see in this game next up is the 
-flying enemys they can obviously fly "
+flying enemys they can obviously fly 
+watch out they might perch on your 
+head."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="health" type="Sprite" parent="."]
-position = Vector2( -4054.3, 157.073 )
+position = Vector2( -3520.01, 157.073 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="health"]
@@ -148,7 +156,7 @@ __meta__ = {
 }
 
 [node name="sign" type="Sprite" parent="."]
-position = Vector2( -5080.64, 158.245 )
+position = Vector2( -4564.31, 158.245 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="sign"]
@@ -166,79 +174,79 @@ __meta__ = {
 }
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( -184.323, 508.054 )
+position = Vector2( -184.323, 509.112 )
 
 [node name="Node2D2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 840.959, 507.871 )
+position = Vector2( 840.959, 509.112 )
 
 [node name="Node2D3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1353.63, 507.809 )
+position = Vector2( 1353.63, 509.112 )
 
 [node name="Node2D4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 4422.7, 509.047 )
+position = Vector2( 4422.7, 509.112 )
 
 [node name="Node2D5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 329.291, 507.819 )
+position = Vector2( 329.291, 509.112 )
 
 [node name="Node2D6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3907.8, 509.029 )
+position = Vector2( 3907.8, 509.112 )
 
 [node name="Node2D7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1866.27, 508.734 )
+position = Vector2( 1866.27, 509.112 )
 
 [node name="Node2D8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3393.6, 508.795 )
+position = Vector2( 3393.6, 509.112 )
 
 [node name="Node2D9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2365.71, 508.751 )
+position = Vector2( 2365.71, 509.112 )
 
 [node name="Node2D10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2879.75, 508.787 )
+position = Vector2( 2879.75, 509.112 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3606.11, 294.127 )
+[node name="box" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3604.18, 293.228 )
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3677.29, 293.317 )
+[node name="box2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3673.82, 293.228 )
 
-[node name="StaticBody2D3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3748.87, 291.73 )
+[node name="box3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3743.27, 293.228 )
 
-[node name="StaticBody2D4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3537.44, 293.167 )
+[node name="box5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3534.98, 293.228 )
 
-[node name="StaticBody2D5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3573.91, 222.827 )
+[node name="box4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3569.27, 224.257 )
 
-[node name="StaticBody2D6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3642.81, 225.358 )
+[node name="box6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3638.28, 224.257 )
 
-[node name="StaticBody2D7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3712.02, 225.508 )
+[node name="box7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3671.15, 155.045 )
 
-[node name="StaticBody2D8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3606.35, 160.381 )
+[node name="box8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3602.31, 155.045 )
 
-[node name="StaticBody2D9" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3667.16, 161.024 )
+[node name="box9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3707.23, 224.257 )
 
-[node name="StaticBody2D10" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3634.02, 96.7982 )
+[node name="box10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3635.25, 86.072 )
 
 [node name="Node2D11" parent="." instance=ExtResource( 2 )]
-position = Vector2( -697.921, 508.363 )
+position = Vector2( -697.921, 509.112 )
 
 [node name="Node2D12" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1212.6, 508.363 )
+position = Vector2( -1212.6, 509.112 )
 
 [node name="Node2D13" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1727.52, 508.462 )
+position = Vector2( -1727.52, 509.112 )
 
 [node name="Node2D14" parent="." instance=ExtResource( 2 )]
-position = Vector2( -2243.19, 508.64 )
+position = Vector2( -2243.19, 509.112 )
 
 [node name="Node2D15" parent="." instance=ExtResource( 2 )]
-position = Vector2( -2758.84, 508.615 )
+position = Vector2( -2758.84, 509.112 )
 
 [node name="Node2D16" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5128.44, 49.8782 )
@@ -249,21 +257,21 @@ scale = Vector2( 1, 1 )
 position = Vector2( -4819.41, 509.112 )
 
 [node name="Node2D18" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5335.16, 508.364 )
+position = Vector2( -5335.16, 509.112 )
 
 [node name="Node2D19" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5850.42, 508.091 )
+position = Vector2( -5850.42, 509.112 )
 
 [node name="Node2D20" parent="." instance=ExtResource( 2 )]
-position = Vector2( -3274.12, 508.91 )
+position = Vector2( -3274.12, 509.112 )
 
 [node name="Node2D21" parent="." instance=ExtResource( 2 )]
-position = Vector2( -3788.58, 508.91 )
+position = Vector2( -3788.58, 509.112 )
 
 [node name="Node2D22" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4304.35, 509.071 )
+position = Vector2( -4304.35, 509.112 )
 
 [node name="Node2D23" parent="." instance=ExtResource( 2 )]
-position = Vector2( -6552.9, 47.9458 )
+position = Vector2( -5722.83, 47.9458 )
 rotation = 1.5708
 scale = Vector2( 1, 1 )

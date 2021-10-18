@@ -104,6 +104,7 @@ vframes = 8
 frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -115,18 +116,21 @@ anims/run = SubResource( 5 )
 anims/swing = SubResource( 6 )
 
 [node name="chasing" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chasing"]
 position = Vector2( 3.8931, -58.4586 )
 shape = SubResource( 7 )
 
 [node name="seeing" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="seeing"]
 position = Vector2( -10.408, -62.2673 )
 shape = SubResource( 8 )
 
 [node name="swipe" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swipe"]
 position = Vector2( 0.471924, -7.11694 )

@@ -140,7 +140,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 10, 47.4465 )
+extents = Vector2( 20, 50 )
 
 [node name="Player" type="KinematicBody2D"]
 collision/safe_margin = 0.001
@@ -166,5 +166,9 @@ vframes = 6
 frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.32618, 1.44652 )
+position = Vector2( -4, -1 )
 shape = SubResource( 9 )
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.9
+one_shot = true

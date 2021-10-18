@@ -7,3 +7,5 @@ func _process(delta):
 func _ready():
 	if direction == -1:
 		$sprite.flip_h = true
+		
+

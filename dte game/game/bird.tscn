@@ -10,7 +10,7 @@ extents = Vector2( 71.305, 15.032 )
 resource_name = "flying"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../bird/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -25,7 +25,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
 tracks/0/type = "value"
-tracks/0/path = NodePath("../bird/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -42,7 +42,7 @@ resource_name = "swipe"
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../bird/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -64,7 +64,14 @@ extents = Vector2( 100.637, 78.1798 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 3
+vframes = 4
+frame = 8
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 2.80615, -2.80615 )
 shape = SubResource( 1 )
 
@@ -73,18 +80,14 @@ anims/flying = SubResource( 2 )
 anims/idle = SubResource( 3 )
 anims/swipe = SubResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-hframes = 3
-vframes = 4
-frame = 8
-
 [node name="chasing" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chasing"]
 shape = SubResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 6 )

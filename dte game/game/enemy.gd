@@ -8,6 +8,7 @@ var speed = 150
 var velocity = Vector2.ZERO
 var target
 var attacking = false
+var health = 30
 
 func _ready():
 	player = player[0]
@@ -66,3 +67,10 @@ func _on_swing_body_entered(body):
 		attacking = true
 		body.damage(-35)
 		state = "attacking"
+
+func kill_skeliton():
+	health -= 20
+	if health <= 0:
+		$AnimationPlayer.play("death")
+		yield($AnimationPlayer,"animation_finished")
+	state = "bones"

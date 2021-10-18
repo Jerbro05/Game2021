@@ -31,7 +31,6 @@ func idle():
 	$AnimationPlayer.play("idle") 
 
 func chasing(delta):
-	#velocity.y += delta
 	var player_position = player.global_position
 	if global_position.x < player_position.x :
 		velocity.x = speed * delta
@@ -44,7 +43,6 @@ func chasing(delta):
 		velocity.y = -speed/2 * delta
 		
 	if not attacking:
-		print("checking flip",delta)
 		if velocity.x != 0 : 
 			$AnimationPlayer.play("fly")
 			if velocity.x < 0: 

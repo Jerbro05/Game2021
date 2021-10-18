@@ -3,7 +3,7 @@
 [ext_resource path="res://things/sewer.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 168.849, 136.469 )
+extents = Vector2( 168.849, 136 )
 
 [node name="sewer floor" type="StaticBody2D"]
 

@@ -9,9 +9,10 @@ extents = Vector2( 349.364, 3510.93 )
 scale = Vector2( 1, 0.5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_top = -3226.0
-margin_right = 602.0
-margin_bottom = 3734.0
+margin_left = -302.04
+margin_top = -3473.46
+margin_right = 299.96
+margin_bottom = 3486.54
 texture = ExtResource( 1 )
 stretch_mode = 2
 __meta__ = {
@@ -19,6 +20,5 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 301.124, 262 )
 scale = Vector2( 0.878, 1 )
 shape = SubResource( 1 )

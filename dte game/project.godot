@@ -54,6 +54,15 @@ config/name="dte game"
 run/main_scene="res://MainMenu.tscn"
 config/icon="res://things/icon.png"
 
+[autoload]
+
+PlayerStats="*res://scripts/player_stats.gd"
+UserInterface="*res://user interface.tscn"
+
+[display]
+
+window/size/resizable=false
+
 [importer_defaults]
 
 texture={
