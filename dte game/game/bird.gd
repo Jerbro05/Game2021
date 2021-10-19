@@ -11,7 +11,8 @@ var can_see = false
 var attacking = false
 var attack_cooldown_time = 1000
 var next_attack_time = 1
-var attack_damage = 30
+var attack_damage = 20
+var health = 20
 
 func _ready():
 	player = player[0]
@@ -62,3 +63,10 @@ func _on_Area2D_body_entered(body):
 		attacking = true
 		$AnimationPlayer.play("swipe")
 		body.damage(-15)
+		
+func kill_bird():
+	health -= 20
+	if health <= 0:
+		$AnimationPlayer.play("death")
+		yield($AnimationPlayer,"animation_finished")
+	state = "dead"

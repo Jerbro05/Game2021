@@ -310,7 +310,7 @@ texture = ExtResource( 3 )
 flip_h = true
 hframes = 6
 vframes = 6
-frame = 18
+frame = 19
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

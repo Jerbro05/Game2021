@@ -48,10 +48,11 @@ __meta__ = {
 }
 
 [node name="sewer boss" parent="." instance=ExtResource( 13 )]
-position = Vector2( -12625, 1427.18 )
+position = Vector2( -12631.2, 1472.37 )
+scale = Vector2( 1.25, 1.25 )
 
 [node name="ground boss" parent="." instance=ExtResource( 13 )]
-position = Vector2( -11399.2, 47.8903 )
+position = Vector2( -11542.2, 90.795 )
 scale = Vector2( 1.25, 1.25 )
 
 [node name="wall" parent="." instance=ExtResource( 18 )]
@@ -91,20 +92,20 @@ position = Vector2( -10363.5, 126.829 )
 position = Vector2( -6528.73, 238.755 )
 
 [node name="flying reeper4" parent="." instance=ExtResource( 3 )]
-position = Vector2( -5651.45, 99.9851 )
-scale = Vector2( 2, 2 )
+position = Vector2( -5651.45, 100 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="flying reeper3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -6747.97, 1396.36 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="flying reeper2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11.8256, -1381.64 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="flying reeper" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1539.32, 1120.74 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="slime" parent="." instance=ExtResource( 2 )]
 position = Vector2( -935.97, 1208.28 )

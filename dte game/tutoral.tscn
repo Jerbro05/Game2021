@@ -35,10 +35,6 @@ position = Vector2( -5107.27, 46.298 )
 position = Vector2( -3870.97, 296.769 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4533.32, 284.994 )
-scale = Vector2( 1.75, 1.6 )
-
 [node name="ground ez" parent="." instance=ExtResource( 6 )]
 position = Vector2( 188.221, 282.512 )
 
@@ -53,7 +49,7 @@ position = Vector2( -2085.11, 268.826 )
 position = Vector2( -540.492, 294.477 )
 
 [node name="slime" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1068, 313 )
+position = Vector2( 1059.01, 313.749 )
 scale = Vector2( 2, 2 )
 
 [node name="walking sign" type="Sprite" parent="."]
@@ -172,6 +168,10 @@ back the way you came. "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4533.32, 284.994 )
+scale = Vector2( 1.75, 1.6 )
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( -184.323, 509.112 )

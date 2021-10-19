@@ -22,9 +22,12 @@ var melee_2 = false
 var damage 
 var can_fire = true
 var is_dead = false
+var velocity = Vector2.ZERO
+
+
 onready var slash_1 = preload("res://slash_1.tscn")
 onready var slash_2 = preload("res://slash_2.tscn")
-var velocity = Vector2.ZERO
+
 
 func get_input():
 	var dir = 0

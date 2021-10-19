@@ -9,6 +9,7 @@ var velocity = Vector2.ZERO
 var target
 var can_see = false
 var attacking = false
+var health = 50
 
 func _ready():
 	player = player[0]

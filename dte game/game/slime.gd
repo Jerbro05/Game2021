@@ -8,12 +8,15 @@ var speed = 100
 var velocity = Vector2.ZERO
 var target
 var attacking = false
+var health = 20
 
 func _ready():
 	player = player[0]
 
 func _process(delta):
-	if state == "idle":
+	if state == "dead":
+		return
+	elif state == "idle":
 		idle()
 	elif state == "sliming":
 		chasing(delta)
@@ -21,6 +24,7 @@ func _process(delta):
 		$AnimationPlayer.play("spitting")
 		yield($AnimationPlayer,"animation_finished")
 		state = "sliming"
+	
 
 func idle():
 	$AnimationPlayer.play("idle") 
@@ -66,3 +70,14 @@ func _on_spitting_body_entered(body):
 		attacking = true
 		body.damage(-35)
 		state = "spitting"
+
+func kill_slime():
+	health -= 20
+	if health <= 0:
+		state = "dead"
+		$AnimationPlayer.play("death")
+		$chasing/CollisionShape2D.disabled = true
+		$chasing/CollisionShape2D.disabled = true
+		yield($AnimationPlayer,"animation_finished")
+		$AnimationPlayer.play("dead")
+		

@@ -8,6 +8,7 @@ var speed = 160
 var velocity = Vector2.ZERO
 var target
 var attacking = false
+var health = 40
 
 func _ready():
 	player = player[0]
@@ -78,3 +79,10 @@ func _on_swipe_body_entered(body):
 		attacking = true
 		body.damage(-25)
 		state = "attacking"
+
+func kill_ripper():
+	health -= 40
+	if health <= 0:
+		$AnimationPlayer.play("death")
+		yield($AnimationPlayer,"animation_finished")
+	state = "dead"

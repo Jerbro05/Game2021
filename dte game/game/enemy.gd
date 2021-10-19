@@ -69,7 +69,7 @@ func _on_swing_body_entered(body):
 		state = "attacking"
 
 func kill_skeliton():
-	health -= 20
+	health -= 30
 	if health <= 0:
 		$AnimationPlayer.play("death")
 		yield($AnimationPlayer,"animation_finished")
