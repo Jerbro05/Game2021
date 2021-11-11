@@ -60,7 +60,7 @@ extents = Vector2( 578.344, 340.794 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 100.637, 78.1798 )
 
-[node name="bird" type="KinematicBody2D"]
+[node name="bird" type="KinematicBody2D" groups=["Enemy"]]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 

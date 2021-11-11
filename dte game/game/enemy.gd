@@ -65,12 +65,16 @@ func _on_Area2D_body_exited(body):
 func _on_swing_body_entered(body):
 	if body.is_in_group("Player"):
 		attacking = true
-		body.damage(-35)
+		body.damage(-15)
 		state = "attacking"
 
-func kill_skeliton():
-	health -= 30
+func kill():
+	health -= 20
 	if health <= 0:
+		state = "bones"
 		$AnimationPlayer.play("death")
-		yield($AnimationPlayer,"animation_finished")
-	state = "bones"
+		set_process(false)
+		set_physics_process(false)
+		$chasing/CollisionShape2D.disabled = true
+		$swing/CollisionShape2D.disabled = true
+

@@ -77,12 +77,16 @@ func _on_Area2D2_body_entered(body):
 func _on_swipe_body_entered(body):
 	if body.is_in_group("Player"):
 		attacking = true
-		body.damage(-25)
+		body.damage(-20)
 		state = "attacking"
 
-func kill_ripper():
-	health -= 40
+func kill():
+	health -= 50
 	if health <= 0:
+		state = "dead"
 		$AnimationPlayer.play("death")
-		yield($AnimationPlayer,"animation_finished")
-	state = "dead"
+		set_process(false)
+		set_physics_process(false)
+		$chasing/CollisionShape2D.disabled = true
+		$swipe/CollisionShape2D.disabled = true
+		$seeing/CollisionShape2D.disabled = true

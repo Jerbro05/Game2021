@@ -9,7 +9,7 @@ var velocity = Vector2.ZERO
 var target
 var can_see = false
 var attacking = false
-var health = 50
+var health = 65
 
 func _ready():
 	player = player[0]
@@ -29,7 +29,6 @@ func idle():
 	$AnimationPlayer.play("idle") 
 
 func chasing(delta):
-	#velocity.y += delta
 	var player_position = player.global_position
 	if global_position.x < player_position.x :
 		velocity.x = speed * delta
@@ -43,17 +42,17 @@ func chasing(delta):
 		
 	if not attacking:
 		if velocity.x != 0 : 
-			$AnimationPlayer.play("fade")
+			$AnimationPlayer.play("idle")
 			if velocity.x < 0: 
 				$Sprite.flip_h = true
 			else: 
 				$Sprite.flip_h = false
 		else:
-			$AnimationPlayer.play("idle") 
+			$AnimationPlayer.play("fade") 
 
 	if target:
 		velocity = move_and_slide(velocity * speed, Vector2.UP)
-#		position = position.move_toward(player_position, speed * delta)
+		#movment
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
@@ -76,9 +75,20 @@ func _on_playerDamage_body_entered(body):
 	if body.is_in_group("Player"):
 		attacking = true
 		$AnimationPlayer.play("swipe")
-		body.damage(-35)
+		body.damage(-25)
 
 func _on_playerDamage_body_exited(body):
 	if body.is_in_group("Player"):
 		attacking = false
-		$AnimationPlayer.play("fade")
+#		$AnimationPlayer.play("fade")
+
+func kill():
+	health -= 20
+	if health <= 0:
+		state = "dead"
+		$AnimationPlayer.play("death")
+		set_process(false)
+		set_physics_process(false)
+		$ChaseZone/CollisionShape2D.disabled = true
+		$AppearArea/CollisionShape2D.disabled = true
+

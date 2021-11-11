@@ -55,29 +55,33 @@ func chasing(delta):
 
 func _on_chasing_body_entered(body):
 	if body.is_in_group("Player"):
+		print("chasing player")
 		attacking = false
 		target = body
 		state = "sliming"
 
 func _on_chasing_body_exited(body):
 	if body.is_in_group("Player"):
+		print("not chasing player")
 		attacking = false
 		target = null
 		state = "idle"
 		
 func _on_spitting_body_entered(body):
 	if body.is_in_group("Player"):
+		print("attacking player")
 		attacking = true
-		body.damage(-35)
+		body.damage(-5)
 		state = "spitting"
 
-func kill_slime():
+
+func kill():
 	health -= 20
 	if health <= 0:
 		state = "dead"
 		$AnimationPlayer.play("death")
+		set_process(false)
+		set_physics_process(false)
 		$chasing/CollisionShape2D.disabled = true
-		$chasing/CollisionShape2D.disabled = true
-		yield($AnimationPlayer,"animation_finished")
-		$AnimationPlayer.play("dead")
-		
+		$spitting/CollisionShape2D.disabled = true
+	

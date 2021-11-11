@@ -12,6 +12,7 @@ var attacking = false
 var attack_cooldown_time = 1000
 var next_attack_time = 1
 var attack_damage = 30
+var health = 60
 
 func _ready():
 	player = player[0]
@@ -86,3 +87,13 @@ func _on_undefence_body_entered(body):
 		state = "waking_up"
 		attacking = false
 
+func kill():
+	health -= 75
+	if health <= 0:
+		state = "dead"
+		$AnimationPlayer.play("death")
+		$chasing/CollisionShape2D.disabled = true
+		$chasing/CollisionShape2D.disabled = true
+		yield($AnimationPlayer,"animation_finished")
+		$AnimationPlayer.play("dead")
+		

@@ -3,7 +3,7 @@
 [ext_resource path="res://things/No bones.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 109.25, 135.5 )
+extents = Vector2( 110.586, 135.458 )
 
 [node name="ground" type="StaticBody2D"]
 

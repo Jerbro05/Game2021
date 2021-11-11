@@ -62,11 +62,9 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
 		attacking = true
 		$AnimationPlayer.play("swipe")
-		body.damage(-15)
+		body.damage(-5)
 		
-func kill_bird():
+func kill():
 	health -= 20
 	if health <= 0:
-		$AnimationPlayer.play("death")
-		yield($AnimationPlayer,"animation_finished")
-	state = "dead"
+		queue_free()

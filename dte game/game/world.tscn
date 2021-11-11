@@ -163,7 +163,7 @@ position = Vector2( -2019.62, 201.39 )
 position = Vector2( 107.427, 293.249 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1121.6, 283.218 )
+position = Vector2( 1118.77, 295.592 )
 scale = Vector2( 1.75, 1.6 )
 
 [node name="big cloud" parent="." instance=ExtResource( 9 )]
@@ -314,10 +314,10 @@ position = Vector2( -2819.89, 335.164 )
 position = Vector2( -2606.06, 388.932 )
 
 [node name="ground22" parent="." instance=ExtResource( 16 )]
-position = Vector2( -743.559, 393.809 )
+position = Vector2( -742.849, 393.692 )
 
 [node name="ground23" parent="." instance=ExtResource( 16 )]
-position = Vector2( -414.2, 393.809 )
+position = Vector2( -414.761, 393.686 )
 
 [node name="ground24" parent="." instance=ExtResource( 14 )]
 position = Vector2( -5125.54, 360.574 )
@@ -572,21 +572,26 @@ scale = Vector2( 0.185551, 0.220797 )
 texture = ExtResource( 8 )
 
 [node name="health5" parent="." instance=ExtResource( 22 )]
+visible = false
 position = Vector2( -5424.59, 1257 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="health4" parent="." instance=ExtResource( 22 )]
+visible = false
 position = Vector2( -2898.06, -845.812 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="health3" parent="." instance=ExtResource( 22 )]
+visible = false
 position = Vector2( -4303.03, 36.0876 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="health2" parent="." instance=ExtResource( 22 )]
+visible = false
 position = Vector2( -9699, 207.71 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="health" parent="." instance=ExtResource( 22 )]
+visible = false
 position = Vector2( -10210.6, 1517.36 )
 scale = Vector2( 0.4, 0.4 )

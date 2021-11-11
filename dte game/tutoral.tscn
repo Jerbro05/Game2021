@@ -29,28 +29,33 @@ __meta__ = {
 }
 
 [node name="door" parent="." instance=ExtResource( 11 )]
-position = Vector2( -5107.27, 46.298 )
+position = Vector2( -4019.9, 46.298 )
 
 [node name="health pot" parent="." instance=ExtResource( 13 )]
+visible = false
 position = Vector2( -3870.97, 296.769 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="ground ez" parent="." instance=ExtResource( 6 )]
-position = Vector2( 188.221, 282.512 )
+position = Vector2( 765.069, 276.519 )
 
 [node name="reaper" parent="." instance=ExtResource( 10 )]
-position = Vector2( -2875.74, 259.224 )
+position = Vector2( -2973.13, 271.96 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="bird" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2085.11, 268.826 )
+position = Vector2( -2198.23, 281.562 )
 
 [node name="ground hard" parent="." instance=ExtResource( 7 )]
-position = Vector2( -540.492, 294.477 )
+position = Vector2( -224.349, 294.477 )
 
 [node name="slime" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1059.01, 313.749 )
+position = Vector2( 2153.03, 307.696 )
 scale = Vector2( 2, 2 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2791.77, 272.49 )
+scale = Vector2( 1.75, 1.6 )
 
 [node name="walking sign" type="Sprite" parent="."]
 position = Vector2( 4250, 190 )
@@ -103,10 +108,10 @@ margin_bottom = 4.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "there are lots of enemys in this game
  some that can fly and some that walk 
-there are 3 flying enemys and 3 
+there are 2 flying enemys and 3 
 walking enemys. the one you just killed
 or passed was the base enemy a 
-skeleton one of the weekest enemys in
+slime one of the weekest enemys in
 this game there is so many enemys 
 that you will have to kill or run past"
 __meta__ = {
@@ -133,6 +138,7 @@ __meta__ = {
 }
 
 [node name="health" type="Sprite" parent="."]
+visible = false
 position = Vector2( -3520.01, 157.073 )
 texture = ExtResource( 4 )
 
@@ -152,7 +158,7 @@ __meta__ = {
 }
 
 [node name="sign" type="Sprite" parent="."]
-position = Vector2( -4564.31, 158.245 )
+position = Vector2( -3535.67, 158.245 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="sign"]
@@ -168,10 +174,6 @@ back the way you came. "
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4533.32, 284.994 )
-scale = Vector2( 1.75, 1.6 )
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( -184.323, 509.112 )
@@ -272,6 +274,6 @@ position = Vector2( -3788.58, 509.112 )
 position = Vector2( -4304.35, 509.112 )
 
 [node name="Node2D23" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5722.83, 47.9458 )
+position = Vector2( -4637.05, 47.9458 )
 rotation = 1.5708
 scale = Vector2( 1, 1 )

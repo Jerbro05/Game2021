@@ -169,7 +169,9 @@ extents = Vector2( 470, 293 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 89.5908, 75.2189 )
 
-[node name="boss" type="KinematicBody2D"]
+[node name="boss" type="KinematicBody2D" groups=[
+"Enemy",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -177,7 +179,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 28
+frame = 53
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

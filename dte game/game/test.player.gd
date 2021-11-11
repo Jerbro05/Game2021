@@ -5,14 +5,14 @@ signal killed()
 
 export (float, 0, 1.0) var friction = 70
 export (float, 0, 1.0) var acceleration = 75 
-export (int) var speed = 600
+export (int) var speed = 750
 export (int) var jump_speed = -1600
 export (int) var gravity = 5500
 export (float) var max_health = 100
 export var slash_speed = 1500
 export var fire_rate = .6
 
-onready var health = max_health setget _set_health
+
 
 var facing = 1
 var animation_state 
@@ -39,6 +39,10 @@ func get_input():
 		velocity.x = move_toward(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction)
+
+func _process(delta):
+	pass
+	
 
 func _physics_process(delta):
 	get_input()
@@ -80,34 +84,48 @@ func slash_1_attack():
 	slash_1_instance.global_position = get_global_position()
 	slash_1_instance.direction = facing
 	get_tree().get_root().add_child(slash_1_instance)
+	#30 damage
 
 func slash_2_attack():
-		var slash_2_instance = slash_2.instance()
-		slash_2_instance.direction = facing
-		get_tree().get_root().add_child(slash_2_instance)
-		slash_2_instance.global_position = get_global_position()
+	var slash_2_instance = slash_2.instance()
+	slash_2_instance.direction = facing
+	get_tree().get_root().add_child(slash_2_instance)
+	slash_2_instance.global_position = get_global_position()
+	#20 damage
 
 func damage(amount):
-	_set_health(health - amount)
+	PlayerStats.change_health(amount)
+	if PlayerStats.get_health()<=0:
+		kill()
+	
 
 func kill():
-	pass
+	$AnimationPlayer.play("death")
 
-func _set_health(value):
-	var prev_health = health
-	health = clamp(value, 0, max_health)
-	if health != prev_health:
-		emit_signal("health_updated", health)
-		if health == 0:
-			kill()
-			emit_signal("killed")
-
+#func _set_health(value):
+#
+#	var prev_health = health
+#	health = clamp(value, 0, max_health)
+#	if health != prev_health:
+#		emit_signal("health_updated", health)
+#		if health <= 0:
+#			kill()
+#			emit_signal("killed")
 
 func _on_slash_1_damage_zone_body_entered(body):
-	pass
+	if body.is_in_group("Enemy"):
+		body.health -= 30
+		if body.health <= 0:
+			body.kill()
+			
+
+func _on_slash_2_damage_zone_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.health -= 20
+		if body.health <= 0:
+			body.kill()
+		
 
 func _ready():
 	animation_state = $AnimationTree.get("parameters/playback")
 
-func _on_slash_2_damage_zone_body_entered(body):
-	pass

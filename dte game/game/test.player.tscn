@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "death"
-length = 2.0
+length = 3.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -14,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.6, 2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 9, 10, 11, 12, 13, 14, 15 ]
@@ -127,10 +127,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.601, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true, true, false, false ]
+"values": [ true, true, false, false, false, true ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -276,9 +276,7 @@ extents = Vector2( 83.1588, 41.2776 )
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 92.8291, 49.6866 )
 
-[node name="player" type="KinematicBody2D" groups=[
-"Player",
-]]
+[node name="player" type="KinematicBody2D" groups=["Player"]]
 position = Vector2( -2, 0 )
 scale = Vector2( 1.25, 1.2 )
 script = ExtResource( 2 )
@@ -310,7 +308,7 @@ texture = ExtResource( 3 )
 flip_h = true
 hframes = 6
 vframes = 6
-frame = 19
+frame = 18
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -328,12 +326,14 @@ shape = SubResource( 34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slash_1 damage zone"]
 shape = SubResource( 35 )
+disabled = true
 
 [node name="slash_2 damage zone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slash_2 damage zone"]
 position = Vector2( 0.840912, -7.14762 )
 shape = SubResource( 36 )
+disabled = true
 
 [node name="invincibility" type="Timer" parent="."]
 wait_time = 0.5
